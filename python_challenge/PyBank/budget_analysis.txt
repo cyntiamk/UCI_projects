@@ -1,0 +1,16 @@
+Script started on Thu Aug 16 22:20:13 2018
+[?1034hbash-3.2$ python budget.py
+<_csv.reader object at 0x1096556d8>
+____________________________________________________________
+Budget Data Analysis
+____________________________________________________________
+Total months: 41
+Total amount: $18971412
+Average Change: $-6759
+Greatest increase: $1837235 (Jan-16)
+Greatest decrease: $-1779747 (Jul-14)
+____________________________________________________________
+bash-3.2$ exit
+exit
+
+Script done on Thu Aug 16 22:20:25 2018

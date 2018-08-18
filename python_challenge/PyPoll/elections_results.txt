@@ -1,0 +1,19 @@
+Script started on Thu Aug 16 20:47:51 2018
+[?1034hbash-3.2$ python election.py
+<_csv.reader object at 0x10d2b8518>
+_____________________________
+Election Results
+_____________________________
+Total Votes: 3521001
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Khan votes: 63% (2218231)
+Li votes: 14% (492940)
+Correy votes: 20% (704200)
+O'Tooley votes: 3% (105630)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Khan is the winner!
+______________________________
+bash-3.2$ exit
+exit
+
+Script done on Thu Aug 16 20:48:30 2018
