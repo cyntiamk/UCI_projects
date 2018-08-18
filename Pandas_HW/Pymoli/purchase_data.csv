@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="Edit · 02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv · master · UCI-Coding-Bootcamp / UCIRV201807DATA4-2" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="https://uci.bootcampcontent.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://uci.bootcampcontent.com/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/edit/master/02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="Edit · 02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv · master · UCI-Coding-Bootcamp / UCIRV201807DATA4-2" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://uci.bootcampcontent.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>Edit · 02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv · master · UCI-Coding-Bootcamp / UCIRV201807DATA4-2 · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" />
+<link rel="stylesheet" media="all" href="/assets/application-3699df5421217cf3678b3fccba46be0eb9ba5f72488c2eece3cf7ee2e8e8b284.css" />
+<link rel="stylesheet" media="print" href="/assets/print-c8ff536271f8974b8a9a5f75c0ca25d2b8c1dceb4cff3c01d1603862a0bdcbfc.css" />
+
+
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://uci.bootcampcontent.com/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=10;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://uci.bootcampcontent.com";gon.revision="94b9323";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors=["#0033CC","#428BCA","#44AD8E","#A8D695","#5CB85C","#69D100","#004E00","#34495E","#7F8C8D","#A295D6","#5843AD","#8E44AD","#FFECDB","#AD4363","#D10069","#CC0033","#FF0000","#D9534F","#D1D100","#F0AD4E","#AD8D43"];gon.current_user_id=773;gon.current_username="cyntiamk";gon.current_user_fullname="Cyntia Wonsch";gon.current_user_avatar_url="https://secure.gravatar.com/avatar/db2c54b3c71eb8d5754c3a0cf3bd743e?s=80\u0026d=identicon";
+//]]>
+</script>
+
+
+<script src="/assets/lib/ace-c78a1527f28ddc6b48da5b327ea6c54ecd02424f3e7212b7821eddb2ee7daa94.js" defer="defer"></script>
+
+<script src="/assets/webpack/runtime.9fcb75d4.bundle.js" defer="defer"></script>
+<script src="/assets/webpack/main.a66b6c66.chunk.js" defer="defer"></script>
+<script src="/assets/webpack/commons~pages.projects~pages.projects.activity~pages.projects.artifacts.browse~pages.projects.artifa~0f0bdae7.4e43267e.chunk.js" defer="defer"></script>
+<script src="/assets/webpack/commons~pages.groups.milestones.edit~pages.groups.milestones.new~pages.projects.blame.show~pages.pro~e382f304.96302454.chunk.js" defer="defer"></script>
+<script src="/assets/webpack/pages.projects.blob.edit.5e51cd39.chunk.js" defer="defer"></script>
+<script>
+  window.uploads_path = "/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/uploads";
+</script>
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="gByAEFULOOkP8/myLYvI/1evLYDVwRnCzzVpgg2cXrOEnRk9KwvdjIWqxZ08KsvVWp4TI47XXkffRcxToLof3A==" />
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png" />
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76" />
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120" />
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152" />
+<link color="rgb(226, 67, 41)" href="/assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+
+
+
+</head>
+
+<body class="ui-indigo " data-find-file="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/find_file/master" data-group="" data-page="projects:blob:edit" data-project="UCIRV201807DATA4-2">
+
+
+<header class="navbar navbar-gitlab qa-navbar navbar-expand-sm">
+<a class="sr-only gl-accessibility" href="#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="/"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"/>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"/>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"/>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"/>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"/>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"/>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"/>
+</svg>
+
+<span class="logo-text d-none d-sm-block">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"/></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li id="nav-projects-dropdown" class="home dropdown header-projects qa-projects-dropdown"><button data-toggle="dropdown" type="button">
+Projects
+<svg class=" caret-down"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-projects-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-projects-link" href="/dashboard/projects">Your projects
+</a></li><li class=""><a href="/dashboard/projects/starred">Starred projects
+</a></li><li class=""><a href="/explore">Explore projects
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div data-project-id="51" data-project-name="UCIRV201807DATA4-2" data-project-namespace="UCI-Coding-Bootcamp / UCIRV201807DATA4-2" data-project-web-url="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2" data-user-name="cyntiamk" id="js-projects-dropdown"></div>
+</div>
+</div>
+
+</div>
+</li><li id="nav-groups-dropdown" class="home dropdown header-groups qa-groups-dropdown"><button data-toggle="dropdown" type="button">
+Groups
+<svg class=" caret-down"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-groups-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-groups-link" href="/dashboard/groups">Your groups
+</a></li><li class=""><a href="/explore/groups">Explore groups
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div data-user-name="cyntiamk" id="js-groups-dropdown"></div>
+</div>
+</div>
+
+</div>
+</li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-activity" title="Activity" href="/dashboard/activity">Activity
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-milestones" title="Milestones" href="/dashboard/milestones">Milestones
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-snippets" title="Snippets" href="/dashboard/snippets">Snippets
+</a></li><li class="header-more dropdown d-lg-none d-xl-none">
+<a data-toggle="dropdown" href="#">
+More
+<svg class=" caret-down"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-down"></use></svg>
+</a>
+<div class="dropdown-menu">
+<ul>
+<li class=""><a title="Activity" href="/dashboard/activity">Activity
+</a></li><li class=""><a class="dashboard-shortcuts-milestones" title="Milestones" href="/dashboard/milestones">Milestones
+</a></li><li class=""><a class="dashboard-shortcuts-snippets" title="Snippets" href="/dashboard/snippets">Snippets
+</a></li></ul>
+</div>
+</li>
+<li class="hidden">
+<a title="Projects" class="dashboard-shortcuts-projects" href="/dashboard/projects">Projects
+</a></li>
+</ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="header-new dropdown">
+<a class="header-new-dropdown-toggle has-tooltip qa-new-menu-toggle" title="New..." ref="tooltip" aria-label="New..." data-toggle="dropdown" data-placement="bottom" data-container="body" data-display="static" href="/projects/new"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#plus-square"></use></svg>
+<svg class=" caret-down"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li class="dropdown-bold-header">This project</li>
+<li>
+<a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues/new">New issue</a>
+</li>
+<li>
+<a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/merge_requests/new">New merge request</a>
+</li>
+<li class="header-new-project-snippet">
+<a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/snippets/new">New snippet</a>
+</li>
+<li class="divider"></li>
+<li class="dropdown-bold-header">GitLab</li>
+<li>
+<a class="qa-global-new-project-link" href="/projects/new">New project</a>
+</li>
+<li>
+<a href="/groups/new">New group</a>
+</li>
+<li>
+<a href="/snippets/new">New snippet</a>
+</li>
+</ul>
+</div>
+</li>
+
+<li class="nav-item d-none d-sm-none d-md-block m-auto">
+<div class="has-location-badge search search-form">
+<form class="form-inline" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><div class="search-input-container">
+<div class="location-badge">This project</div>
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" aria-label="Search" />
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#search"></use></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#close"></use></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" class="js-search-group-options" />
+<input type="hidden" name="project_id" id="search_project_id" value="51" class="js-search-project-options" data-project-path="UCIRV201807DATA4-2" data-name="UCIRV201807DATA4-2" data-issues-path="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues" data-mr-path="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/merge_requests" data-issues-disabled="false" />
+<input type="hidden" name="search_code" id="search_code" value="true" />
+<input type="hidden" name="repository_ref" id="repository_ref" value="master" />
+
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete" data-autocomplete-project-id="51" data-autocomplete-project-ref="master"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-sm-none d-md-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="/search"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#search"></use></svg>
+</a></li>
+<li class="user-counter"><a title="Issues" class="dashboard-shortcuts-issues" aria-label="Issues" data-toggle="tooltip" data-placement="bottom" data-container="body" href="/dashboard/issues?assignee_id=773"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#issues"></use></svg>
+<span class="badge badge-pill hidden issues-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Merge requests" class="dashboard-shortcuts-merge_requests" aria-label="Merge requests" data-toggle="tooltip" data-placement="bottom" data-container="body" href="/dashboard/merge_requests?assignee_id=773"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#git-merge"></use></svg>
+<span class="badge badge-pill hidden merge-requests-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Todos" aria-label="Todos" class="shortcuts-todos" data-toggle="tooltip" data-placement="bottom" data-container="body" href="/dashboard/todos"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#todo-done"></use></svg>
+<span class="badge badge-pill hidden todos-count">
+0
+</span>
+</a></li><li class="nav-item header-user dropdown">
+<a class="header-user-dropdown-toggle" data-toggle="dropdown" href="/cyntiamk"><img width="23" height="23" class="header-user-avatar qa-user-avatar lazy" data-src="https://secure.gravatar.com/avatar/db2c54b3c71eb8d5754c3a0cf3bd743e?s=46&amp;d=identicon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+<svg class=" caret-down"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li class="current-user">
+<div class="user-name bold">
+Cyntia Wonsch
+</div>
+@cyntiamk
+</li>
+<li class="divider"></li>
+<li>
+<a class="profile-link" data-user="cyntiamk" href="/cyntiamk">Profile</a>
+</li>
+<li>
+<a href="/profile">Settings</a>
+</li>
+<li>
+<a href="/help">Help</a>
+</li>
+<li class="divider"></li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+<svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#external-link"></use></svg>
+</a></li>
+<li class="divider"></li>
+
+<li>
+<a class="sign-out-link" href="/users/sign_out">Sign out</a>
+</li>
+</ul>
+
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#more"></use></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#close"></use></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page page-with-contextual-sidebar">
+<div class="nav-sidebar">
+<div class="nav-sidebar-inner-scroll">
+<div class="context-header">
+<a title="UCIRV201807DATA4-2" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2"><div class="avatar-container s40 project-avatar">
+<div class="avatar s40 avatar-tile identicon" style="background-color: #E8EAF6; color: #555">U</div>
+</div>
+<div class="sidebar-context-title">
+UCIRV201807DATA4-2
+</div>
+</a></div>
+<ul class="sidebar-top-level-items">
+<li class="home"><a class="shortcuts-project" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#project"></use></svg>
+</div>
+<span class="nav-item-name">
+Project
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2"><strong class="fly-out-top-item-name">
+Project
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Project details" class="shortcuts-project" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2"><span>Details</span>
+</a></li><li class=""><a title="Activity" class="shortcuts-project-activity" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/activity"><span>Activity</span>
+</a></li>
+<li class=""><a title="Cycle Analytics" class="shortcuts-project-cycle-analytics" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/cycle_analytics"><span>Cycle Analytics</span>
+</a></li></ul>
+</li><li class="active"><a class="shortcuts-tree" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/tree/master"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#doc_text"></use></svg>
+</div>
+<span class="nav-item-name">
+Repository
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item active"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/tree/master"><strong class="fly-out-top-item-name">
+Repository
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class="active"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/tree/master">Files
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/commits/master">Commits
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/branches">Branches
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/tags">Tags
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/graphs/master">Contributors
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/network/master">Graph
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/compare?from=master&amp;to=master">Compare
+</a></li><li class=""><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/graphs/master/charts">Charts
+</a></li>
+</ul>
+</li><li class=""><a class="shortcuts-issues" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#issues"></use></svg>
+</div>
+<span class="nav-item-name">
+Issues
+</span>
+<span class="badge badge-pill count issue_counter">
+0
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues"><strong class="fly-out-top-item-name">
+Issues
+</strong>
+<span class="badge badge-pill count issue_counter fly-out-badge">
+0
+</span>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Issues" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues"><span>
+List
+</span>
+</a></li><li class=""><a title="Board" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/boards"><span>
+Board
+</span>
+</a></li><li class=""><a title="Labels" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/labels"><span>
+Labels
+</span>
+</a></li>
+<li class=""><a title="Milestones" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/milestones"><span>
+Milestones
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-merge_requests" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/merge_requests"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#git-merge"></use></svg>
+</div>
+<span class="nav-item-name">
+Merge Requests
+</span>
+<span class="badge badge-pill count merge_counter js-merge-counter">
+0
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/merge_requests"><strong class="fly-out-top-item-name">
+Merge Requests
+</strong>
+<span class="badge badge-pill count merge_counter js-merge-counter fly-out-badge">
+0
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-pipelines" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/pipelines"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#rocket"></use></svg>
+</div>
+<span class="nav-item-name">
+CI / CD
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/pipelines"><strong class="fly-out-top-item-name">
+CI / CD
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Pipelines" class="shortcuts-pipelines" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/pipelines"><span>
+Pipelines
+</span>
+</a></li><li class=""><a title="Jobs" class="shortcuts-builds" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/-/jobs"><span>
+Jobs
+</span>
+</a></li><li class=""><a title="Schedules" class="shortcuts-builds" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/pipeline_schedules"><span>
+Schedules
+</span>
+</a></li><li class=""><a title="Charts" class="shortcuts-pipelines-charts" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/pipelines/charts"><span>
+Charts
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-operations" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/environments/metrics"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#cloud-gear"></use></svg>
+</div>
+<span class="nav-item-name">
+Operations
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/environments/metrics"><strong class="fly-out-top-item-name">
+Operations
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Metrics" class="shortcuts-metrics" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/environments/metrics"><span>
+Metrics
+</span>
+</a></li><li class=""><a title="Environments" class="shortcuts-environments" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/environments"><span>
+Environments
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-wiki" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/wikis/home"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#book"></use></svg>
+</div>
+<span class="nav-item-name">
+Wiki
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/wikis/home"><strong class="fly-out-top-item-name">
+Wiki
+</strong>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-snippets" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/snippets"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#snippet"></use></svg>
+</div>
+<span class="nav-item-name">
+Snippets
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/snippets"><strong class="fly-out-top-item-name">
+Snippets
+</strong>
+</a></li></ul>
+</li><li class=""><a title="Members" class="shortcuts-tree" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/settings/members"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#users"></use></svg>
+</div>
+<span class="nav-item-name">
+Members
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/project_members"><strong class="fly-out-top-item-name">
+Members
+</strong>
+</a></li></ul>
+</li><a class="toggle-sidebar-button js-toggle-sidebar" role="button" title="Toggle sidebar" type="button">
+<svg class=" icon-angle-double-left"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-double-left"></use></svg>
+<svg class=" icon-angle-double-right"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-double-right"></use></svg>
+<span class="collapse-text">Collapse sidebar</span>
+</a>
+<button name="button" type="button" class="close-nav-button"><svg class="s16"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#close"></use></svg>
+<span class="collapse-text">Close sidebar</span>
+</button>
+<li class="hidden">
+<a title="Activity" class="shortcuts-project-activity" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/activity"><span>
+Activity
+</span>
+</a></li>
+<li class="hidden">
+<a title="Network" class="shortcuts-network" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/network/master">Graph
+</a></li>
+<li class="hidden">
+<a title="Charts" class="shortcuts-repository-charts" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/graphs/master/charts">Charts
+</a></li>
+<li class="hidden">
+<a class="shortcuts-new-issue" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/issues/new">Create a new issue
+</a></li>
+<li class="hidden">
+<a title="Jobs" class="shortcuts-builds" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/-/jobs">Jobs
+</a></li>
+<li class="hidden">
+<a title="Commits" class="shortcuts-commits" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/commits/master">Commits
+</a></li>
+<li class="hidden">
+<a title="Issue Boards" class="shortcuts-issue-boards" href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/boards">Issue Boards</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+<nav class="breadcrumbs container-fluid container-limited" role="navigation">
+<div class="breadcrumbs-container">
+<button name="button" type="button" class="toggle-mobile-nav"><span class="sr-only">Open sidebar</span>
+<i aria-hidden="true" data-hidden="true" class="fa fa-bars"></i>
+</button><div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a class="group-path breadcrumb-item-text js-breadcrumb-item-text " href="/UCI-Coding-Bootcamp"><img class="avatar-tile lazy" width="15" height="15" data-src="/uploads/-/system/group/avatar/3/uci_logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />UCI-Coding-Bootcamp</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-right"></use></svg></li> <li><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2"><span class="breadcrumb-item-text js-breadcrumb-item-text">UCIRV201807DATA4-2</span></a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#angle-right"></use></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/edit/master/02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv">Repository</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="flash-container flash-container-page">
+</div>
+
+</div>
+<div class=" ">
+<div class="content" id="content-body">
+<div class="container-fluid container-limited">
+<div class="editor-title-row">
+<h3 class="page-title blob-edit-page-title">
+Edit file
+</h3>
+<div class="template-selectors-menu">
+<div class="templates-selectors-label">
+Template
+</div>
+<div class="template-selector-dropdowns-wrap">
+<div class="template-type-selector js-template-type-selector-wrap hidden">
+<div class="dropdown "><button class="dropdown-menu-toggle js-template-type-selector" type="button" data-toggle="dropdown"><span class="dropdown-toggle-text ">Choose type</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button><div class="dropdown-menu dropdown-select "><div class="dropdown-title"><span>Choose a template type</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div><div class="dropdown-content "></div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div></div></div>
+</div>
+<div class="license-selector js-license-selector-wrap js-template-selector-wrap hidden">
+<div class="dropdown "><button class="dropdown-menu-toggle js-license-selector" type="button" data-data="{&quot;Popular&quot;:[{&quot;name&quot;:&quot;GNU General Public License v3.0&quot;,&quot;id&quot;:&quot;gpl-3.0&quot;},{&quot;name&quot;:&quot;Apache License 2.0&quot;,&quot;id&quot;:&quot;apache-2.0&quot;},{&quot;name&quot;:&quot;MIT License&quot;,&quot;id&quot;:&quot;mit&quot;}],&quot;Other&quot;:[{&quot;name&quot;:&quot;BSD 2-clause \&quot;Simplified\&quot; License&quot;,&quot;id&quot;:&quot;bsd-2-clause&quot;},{&quot;name&quot;:&quot;GNU Lesser General Public License v2.1&quot;,&quot;id&quot;:&quot;lgpl-2.1&quot;},{&quot;name&quot;:&quot;The Unlicense&quot;,&quot;id&quot;:&quot;unlicense&quot;},{&quot;name&quot;:&quot;GNU Affero General Public License v3.0&quot;,&quot;id&quot;:&quot;agpl-3.0&quot;},{&quot;name&quot;:&quot;GNU General Public License v2.0&quot;,&quot;id&quot;:&quot;gpl-2.0&quot;},{&quot;name&quot;:&quot;Eclipse Public License 1.0&quot;,&quot;id&quot;:&quot;epl-1.0&quot;},{&quot;name&quot;:&quot;BSD 3-clause \&quot;New\&quot; or \&quot;Revised\&quot; License&quot;,&quot;id&quot;:&quot;bsd-3-clause&quot;},{&quot;name&quot;:&quot;GNU Lesser General Public License v3.0&quot;,&quot;id&quot;:&quot;lgpl-3.0&quot;},{&quot;name&quot;:&quot;Mozilla Public License 2.0&quot;,&quot;id&quot;:&quot;mpl-2.0&quot;}]}" data-project="UCIRV201807DATA4-2" data-fullname="UCI-Coding-Bootcamp" data-toggle="dropdown"><span class="dropdown-toggle-text ">Apply a license template</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button><div class="dropdown-menu dropdown-select "><div class="dropdown-title"><span>Apply a license</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div><div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Filter" autocomplete="off" /><i aria-hidden="true" data-hidden="true" class="fa fa-search dropdown-input-search"></i><i role="button" aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div><div class="dropdown-content "></div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div></div></div>
+</div>
+<div class="gitignore-selector js-gitignore-selector-wrap js-template-selector-wrap hidden">
+<div class="dropdown "><button class="dropdown-menu-toggle js-gitignore-selector" type="button" data-data="{&quot;Languages&quot;:[{&quot;name&quot;:&quot;Actionscript&quot;},{&quot;name&quot;:&quot;Ada&quot;},{&quot;name&quot;:&quot;Agda&quot;},{&quot;name&quot;:&quot;Android&quot;},{&quot;name&quot;:&quot;AppEngine&quot;},{&quot;name&quot;:&quot;AppceleratorTitanium&quot;},{&quot;name&quot;:&quot;ArchLinuxPackages&quot;},{&quot;name&quot;:&quot;Autotools&quot;},{&quot;name&quot;:&quot;C&quot;},{&quot;name&quot;:&quot;C++&quot;},{&quot;name&quot;:&quot;CFWheels&quot;},{&quot;name&quot;:&quot;CMake&quot;},{&quot;name&quot;:&quot;CUDA&quot;},{&quot;name&quot;:&quot;CakePHP&quot;},{&quot;name&quot;:&quot;ChefCookbook&quot;},{&quot;name&quot;:&quot;Clojure&quot;},{&quot;name&quot;:&quot;CodeIgniter&quot;},{&quot;name&quot;:&quot;CommonLisp&quot;},{&quot;name&quot;:&quot;Composer&quot;},{&quot;name&quot;:&quot;Concrete5&quot;},{&quot;name&quot;:&quot;Coq&quot;},{&quot;name&quot;:&quot;CraftCMS&quot;},{&quot;name&quot;:&quot;D&quot;},{&quot;name&quot;:&quot;DM&quot;},{&quot;name&quot;:&quot;Dart&quot;},{&quot;name&quot;:&quot;Delphi&quot;},{&quot;name&quot;:&quot;Drupal&quot;},{&quot;name&quot;:&quot;EPiServer&quot;},{&quot;name&quot;:&quot;Eagle&quot;},{&quot;name&quot;:&quot;Elisp&quot;},{&quot;name&quot;:&quot;Elixir&quot;},{&quot;name&quot;:&quot;Elm&quot;},{&quot;name&quot;:&quot;Erlang&quot;},{&quot;name&quot;:&quot;ExpressionEngine&quot;},{&quot;name&quot;:&quot;ExtJs&quot;},{&quot;name&quot;:&quot;Fancy&quot;},{&quot;name&quot;:&quot;Finale&quot;},{&quot;name&quot;:&quot;ForceDotCom&quot;},{&quot;name&quot;:&quot;Fortran&quot;},{&quot;name&quot;:&quot;FuelPHP&quot;},{&quot;name&quot;:&quot;GWT&quot;},{&quot;name&quot;:&quot;Gcov&quot;},{&quot;name&quot;:&quot;GitBook&quot;},{&quot;name&quot;:&quot;Go&quot;},{&quot;name&quot;:&quot;Godot&quot;},{&quot;name&quot;:&quot;Gradle&quot;},{&quot;name&quot;:&quot;Grails&quot;},{&quot;name&quot;:&quot;Haskell&quot;},{&quot;name&quot;:&quot;IGORPro&quot;},{&quot;name&quot;:&quot;Idris&quot;},{&quot;name&quot;:&quot;Java&quot;},{&quot;name&quot;:&quot;Jboss&quot;},{&quot;name&quot;:&quot;Jekyll&quot;},{&quot;name&quot;:&quot;Joomla&quot;},{&quot;name&quot;:&quot;Julia&quot;},{&quot;name&quot;:&quot;KiCad&quot;},{&quot;name&quot;:&quot;Kohana&quot;},{&quot;name&quot;:&quot;Kotlin&quot;},{&quot;name&quot;:&quot;LabVIEW&quot;},{&quot;name&quot;:&quot;Laravel&quot;},{&quot;name&quot;:&quot;Leiningen&quot;},{&quot;name&quot;:&quot;LemonStand&quot;},{&quot;name&quot;:&quot;Lilypond&quot;},{&quot;name&quot;:&quot;Lithium&quot;},{&quot;name&quot;:&quot;Lua&quot;},{&quot;name&quot;:&quot;Magento&quot;},{&quot;name&quot;:&quot;Maven&quot;},{&quot;name&quot;:&quot;Mercury&quot;},{&quot;name&quot;:&quot;MetaProgrammingSystem&quot;},{&quot;name&quot;:&quot;Nanoc&quot;},{&quot;name&quot;:&quot;Nim&quot;},{&quot;name&quot;:&quot;Node&quot;},{&quot;name&quot;:&quot;OCaml&quot;},{&quot;name&quot;:&quot;Objective-C&quot;},{&quot;name&quot;:&quot;Opa&quot;},{&quot;name&quot;:&quot;OpenCart&quot;},{&quot;name&quot;:&quot;OracleForms&quot;},{&quot;name&quot;:&quot;Packer&quot;},{&quot;name&quot;:&quot;Perl&quot;},{&quot;name&quot;:&quot;Perl6&quot;},{&quot;name&quot;:&quot;Phalcon&quot;},{&quot;name&quot;:&quot;PlayFramework&quot;},{&quot;name&quot;:&quot;Plone&quot;},{&quot;name&quot;:&quot;Prestashop&quot;},{&quot;name&quot;:&quot;Processing&quot;},{&quot;name&quot;:&quot;PureScript&quot;},{&quot;name&quot;:&quot;Python&quot;},{&quot;name&quot;:&quot;Qooxdoo&quot;},{&quot;name&quot;:&quot;Qt&quot;},{&quot;name&quot;:&quot;R&quot;},{&quot;name&quot;:&quot;ROS&quot;},{&quot;name&quot;:&quot;Rails&quot;},{&quot;name&quot;:&quot;RhodesRhomobile&quot;},{&quot;name&quot;:&quot;Ruby&quot;},{&quot;name&quot;:&quot;Rust&quot;},{&quot;name&quot;:&quot;SCons&quot;},{&quot;name&quot;:&quot;Sass&quot;},{&quot;name&quot;:&quot;Scala&quot;},{&quot;name&quot;:&quot;Scheme&quot;},{&quot;name&quot;:&quot;Scrivener&quot;},{&quot;name&quot;:&quot;Sdcc&quot;},{&quot;name&quot;:&quot;SeamGen&quot;},{&quot;name&quot;:&quot;SketchUp&quot;},{&quot;name&quot;:&quot;Smalltalk&quot;},{&quot;name&quot;:&quot;Stella&quot;},{&quot;name&quot;:&quot;SugarCRM&quot;},{&quot;name&quot;:&quot;Swift&quot;},{&quot;name&quot;:&quot;Symfony&quot;},{&quot;name&quot;:&quot;SymphonyCMS&quot;},{&quot;name&quot;:&quot;TeX&quot;},{&quot;name&quot;:&quot;Terraform&quot;},{&quot;name&quot;:&quot;Textpattern&quot;},{&quot;name&quot;:&quot;TurboGears2&quot;},{&quot;name&quot;:&quot;Typo3&quot;},{&quot;name&quot;:&quot;Umbraco&quot;},{&quot;name&quot;:&quot;Unity&quot;},{&quot;name&quot;:&quot;UnrealEngine&quot;},{&quot;name&quot;:&quot;VVVV&quot;},{&quot;name&quot;:&quot;VisualStudio&quot;},{&quot;name&quot;:&quot;Waf&quot;},{&quot;name&quot;:&quot;WordPress&quot;},{&quot;name&quot;:&quot;Xojo&quot;},{&quot;name&quot;:&quot;Yeoman&quot;},{&quot;name&quot;:&quot;Yii&quot;},{&quot;name&quot;:&quot;ZendFramework&quot;},{&quot;name&quot;:&quot;Zephir&quot;}],&quot;Global&quot;:[{&quot;name&quot;:&quot;Anjuta&quot;},{&quot;name&quot;:&quot;Ansible&quot;},{&quot;name&quot;:&quot;Archives&quot;},{&quot;name&quot;:&quot;Backup&quot;},{&quot;name&quot;:&quot;Bazaar&quot;},{&quot;name&quot;:&quot;BricxCC&quot;},{&quot;name&quot;:&quot;CVS&quot;},{&quot;name&quot;:&quot;Calabash&quot;},{&quot;name&quot;:&quot;Cloud9&quot;},{&quot;name&quot;:&quot;CodeKit&quot;},{&quot;name&quot;:&quot;DartEditor&quot;},{&quot;name&quot;:&quot;Dreamweaver&quot;},{&quot;name&quot;:&quot;Dropbox&quot;},{&quot;name&quot;:&quot;Eclipse&quot;},{&quot;name&quot;:&quot;EiffelStudio&quot;},{&quot;name&quot;:&quot;Emacs&quot;},{&quot;name&quot;:&quot;Ensime&quot;},{&quot;name&quot;:&quot;Espresso&quot;},{&quot;name&quot;:&quot;FlexBuilder&quot;},{&quot;name&quot;:&quot;GPG&quot;},{&quot;name&quot;:&quot;JDeveloper&quot;},{&quot;name&quot;:&quot;JEnv&quot;},{&quot;name&quot;:&quot;JetBrains&quot;},{&quot;name&quot;:&quot;KDevelop4&quot;},{&quot;name&quot;:&quot;Kate&quot;},{&quot;name&quot;:&quot;Lazarus&quot;},{&quot;name&quot;:&quot;LibreOffice&quot;},{&quot;name&quot;:&quot;Linux&quot;},{&quot;name&quot;:&quot;LyX&quot;},{&quot;name&quot;:&quot;Matlab&quot;},{&quot;name&quot;:&quot;Mercurial&quot;},{&quot;name&quot;:&quot;MicrosoftOffice&quot;},{&quot;name&quot;:&quot;ModelSim&quot;},{&quot;name&quot;:&quot;Momentics&quot;},{&quot;name&quot;:&quot;MonoDevelop&quot;},{&quot;name&quot;:&quot;NetBeans&quot;},{&quot;name&quot;:&quot;Ninja&quot;},{&quot;name&quot;:&quot;NotepadPP&quot;},{&quot;name&quot;:&quot;Otto&quot;},{&quot;name&quot;:&quot;Patch&quot;},{&quot;name&quot;:&quot;Redcar&quot;},{&quot;name&quot;:&quot;Redis&quot;},{&quot;name&quot;:&quot;SBT&quot;},{&quot;name&quot;:&quot;SVN&quot;},{&quot;name&quot;:&quot;SlickEdit&quot;},{&quot;name&quot;:&quot;Stata&quot;},{&quot;name&quot;:&quot;SublimeText&quot;},{&quot;name&quot;:&quot;SynopsysVCS&quot;},{&quot;name&quot;:&quot;Tags&quot;},{&quot;name&quot;:&quot;TextMate&quot;},{&quot;name&quot;:&quot;TortoiseGit&quot;},{&quot;name&quot;:&quot;Vagrant&quot;},{&quot;name&quot;:&quot;Vim&quot;},{&quot;name&quot;:&quot;VirtualEnv&quot;},{&quot;name&quot;:&quot;VisualStudioCode&quot;},{&quot;name&quot;:&quot;WebMethods&quot;},{&quot;name&quot;:&quot;Windows&quot;},{&quot;name&quot;:&quot;Xcode&quot;},{&quot;name&quot;:&quot;XilinxISE&quot;},{&quot;name&quot;:&quot;macOS&quot;}]}" data-toggle="dropdown"><span class="dropdown-toggle-text ">Apply a .gitignore template</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button><div class="dropdown-menu dropdown-select "><div class="dropdown-title"><span>Apply a template</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div><div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Filter" autocomplete="off" /><i aria-hidden="true" data-hidden="true" class="fa fa-search dropdown-input-search"></i><i role="button" aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div><div class="dropdown-content "></div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div></div></div>
+</div>
+<div class="gitlab-ci-yml-selector js-gitlab-ci-yml-selector-wrap js-template-selector-wrap hidden">
+<div class="dropdown "><button class="dropdown-menu-toggle js-gitlab-ci-yml-selector" type="button" data-data="{&quot;General&quot;:[{&quot;name&quot;:&quot;Android&quot;},{&quot;name&quot;:&quot;Auto-DevOps&quot;},{&quot;name&quot;:&quot;Bash&quot;},{&quot;name&quot;:&quot;C++&quot;},{&quot;name&quot;:&quot;Chef&quot;},{&quot;name&quot;:&quot;Clojure&quot;},{&quot;name&quot;:&quot;Crystal&quot;},{&quot;name&quot;:&quot;Django&quot;},{&quot;name&quot;:&quot;Docker&quot;},{&quot;name&quot;:&quot;Elixir&quot;},{&quot;name&quot;:&quot;Go&quot;},{&quot;name&quot;:&quot;Gradle&quot;},{&quot;name&quot;:&quot;Grails&quot;},{&quot;name&quot;:&quot;Julia&quot;},{&quot;name&quot;:&quot;LaTeX&quot;},{&quot;name&quot;:&quot;Laravel&quot;},{&quot;name&quot;:&quot;Maven&quot;},{&quot;name&quot;:&quot;Mono&quot;},{&quot;name&quot;:&quot;Nodejs&quot;},{&quot;name&quot;:&quot;OpenShift&quot;},{&quot;name&quot;:&quot;PHP&quot;},{&quot;name&quot;:&quot;Packer&quot;},{&quot;name&quot;:&quot;Python&quot;},{&quot;name&quot;:&quot;Ruby&quot;},{&quot;name&quot;:&quot;Rust&quot;},{&quot;name&quot;:&quot;Scala&quot;},{&quot;name&quot;:&quot;Swift&quot;},{&quot;name&quot;:&quot;Terraform&quot;},{&quot;name&quot;:&quot;dotNET&quot;}],&quot;Pages&quot;:[{&quot;name&quot;:&quot;Brunch&quot;},{&quot;name&quot;:&quot;Doxygen&quot;},{&quot;name&quot;:&quot;Gatsby&quot;},{&quot;name&quot;:&quot;HTML&quot;},{&quot;name&quot;:&quot;Harp&quot;},{&quot;name&quot;:&quot;Hexo&quot;},{&quot;name&quot;:&quot;Hugo&quot;},{&quot;name&quot;:&quot;Hyde&quot;},{&quot;name&quot;:&quot;JBake&quot;},{&quot;name&quot;:&quot;Jekyll&quot;},{&quot;name&quot;:&quot;Lektor&quot;},{&quot;name&quot;:&quot;Metalsmith&quot;},{&quot;name&quot;:&quot;Middleman&quot;},{&quot;name&quot;:&quot;Nanoc&quot;},{&quot;name&quot;:&quot;Octopress&quot;},{&quot;name&quot;:&quot;Pelican&quot;}]}" data-toggle="dropdown"><span class="dropdown-toggle-text ">Apply a GitLab CI Yaml template</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button><div class="dropdown-menu dropdown-select "><div class="dropdown-title"><span>Apply a template</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div><div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Filter" autocomplete="off" /><i aria-hidden="true" data-hidden="true" class="fa fa-search dropdown-input-search"></i><i role="button" aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div><div class="dropdown-content "></div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div></div></div>
+</div>
+<div class="dockerfile-selector js-dockerfile-selector-wrap js-template-selector-wrap hidden">
+<div class="dropdown "><button class="dropdown-menu-toggle js-dockerfile-selector" type="button" data-data="{&quot;General&quot;:[{&quot;name&quot;:&quot;Binary&quot;},{&quot;name&quot;:&quot;Binary-alpine&quot;},{&quot;name&quot;:&quot;Binary-scratch&quot;},{&quot;name&quot;:&quot;Golang&quot;},{&quot;name&quot;:&quot;Golang-alpine&quot;},{&quot;name&quot;:&quot;Golang-scratch&quot;},{&quot;name&quot;:&quot;HTTPd&quot;},{&quot;name&quot;:&quot;Node&quot;},{&quot;name&quot;:&quot;Node-alpine&quot;},{&quot;name&quot;:&quot;OpenJDK&quot;},{&quot;name&quot;:&quot;OpenJDK-alpine&quot;},{&quot;name&quot;:&quot;PHP&quot;},{&quot;name&quot;:&quot;Python&quot;},{&quot;name&quot;:&quot;Python-alpine&quot;},{&quot;name&quot;:&quot;Python2&quot;},{&quot;name&quot;:&quot;Ruby&quot;},{&quot;name&quot;:&quot;Ruby-alpine&quot;}]}" data-toggle="dropdown"><span class="dropdown-toggle-text ">Apply a Dockerfile template</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button><div class="dropdown-menu dropdown-select "><div class="dropdown-title"><span>Apply a template</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div><div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Filter" autocomplete="off" /><i aria-hidden="true" data-hidden="true" class="fa fa-search dropdown-input-search"></i><i role="button" aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div><div class="dropdown-content "></div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div></div></div>
+</div>
+</div>
+<div class="template-selectors-undo-menu hidden">
+<span class="text-info">Template applied</span>
+<button class="btn btn-sm btn-info">Undo</button>
+</div>
+</div>
+
+</div>
+<div class="file-editor">
+<ul class="nav-links no-bottom js-edit-mode nav nav-tabs">
+<li class="active">
+<a href="#editor">Write
+</a></li>
+<li>
+<a data-preview-url="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/preview/master/02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv" href="#preview">Preview changes
+</a></li>
+</ul>
+<form class="js-quick-submit js-requires-input js-edit-blob-form" data-relative-url-root="null" data-assets-prefix="/assets" data-blob-language="text" action="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/update/master/02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="5MHJEFcUufF41iAnvj2ARklnKaJHJHZ2RBxK30Hg6NzgQFA9KRRclPKPHAivnINsRFYXARwyMfNUbO8O7Mapsw==" /><div class="file-holder-bottom-radius file-holder file append-bottom-default">
+<div class="js-file-title file-title clearfix" data-current-action="edit">
+<div class="editor-ref">
+<svg class="s12"><use xlink:href="/assets/icons-07542808fffaf82e9b57b144464ea42620b32f65ce441c01528d23d4b96d5f11.svg#fork"></use></svg>
+master
+</div>
+<span class="editor-file-name">
+<input type="text" name="file_path" id="file_path" value="02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv" class="form-control new-file-path js-file-path-name-input" />
+</span>
+<div class="float-right file-buttons">
+<button name="button" type="button" class="soft-wrap-toggle btn" tabindex="-1"><span class="no-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="m6 11h-4.509c-.263 0-.491.226-.491.505v.991c0 .291.22.505.491.505h4.509v.679c0 .301.194.413.454.236l2.355-1.607c.251-.171.259-.442 0-.619l-2.355-1.607c-.251-.171-.454-.07-.454.236v.681m-5-7.495c0-.279.22-.505.498-.505h13c.275 0 .498.214.498.505v.991c0 .279-.22.505-.498.505h-13c-.275 0-.498-.214-.498-.505v-.991m10 8c0-.279.215-.505.49-.505h3.02c.271 0 .49.214.49.505v.991c0 .279-.215.505-.49.505h-3.02c-.271 0-.49-.214-.49-.505v-.991m-10-4c0-.279.22-.505.498-.505h13c.275 0 .498.214.498.505v.991c0 .279-.22.505-.498.505h-13c-.275 0-.498-.214-.498-.505v-.991"/>
+</svg>
+
+No wrap
+</span>
+<span class="soft-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="m12 11h-2v-.681c0-.307-.203-.407-.454-.236l-2.355 1.607c-.259.177-.251.448 0 .619l2.355 1.607c.259.177.454.065.454-.236v-.679h2c0 0 0 0 0 0 1.657 0 3-1.343 3-3 0-.828-.336-1.578-.879-2.121-.543-.543-1.293-.879-2.121-.879-.001 0-.002 0-.002 0h-10.497c-.271 0-.5.226-.5.505v.991c0 .291.224.505.5.505h10.497c.001 0 .002 0 .002 0 .552 0 1 .448 1 1 0 .276-.112.526-.293.707-.181.181-.431.293-.707.293m-11-7.495c0-.279.22-.505.498-.505h13c.275 0 .498.214.498.505v.991c0 .279-.22.505-.498.505h-13c-.275 0-.498-.214-.498-.505v-.991m0 8c0-.279.215-.505.49-.505h3.02c.271 0 .49.214.49.505v.991c0 .279-.215.505-.49.505h-3.02c-.271 0-.49-.214-.49-.505v-.991"/>
+</svg>
+
+Soft wrap
+</span>
+</button><div class="encoding-selector">
+<select name="encoding" id="encoding" class="select2" tabindex="-1"><option value="base64">base64</option>
+<option selected="selected" value="text">text</option></select>
+</div>
+</div>
+</div>
+<div class="file-editor code">
+<pre class="js-edit-mode-pane" id="editor">Purchase ID,SN,Age,Gender,Item ID,Item Name,Price
+0,Lisim78,20,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+1,Lisovynya38,40,Male,143,Frenzied Scimitar,1.56
+2,Ithergue48,24,Male,92,Final Critic,4.88
+3,Chamassasya86,24,Male,100,Blindscythe,3.27
+4,Iskosia90,23,Male,131,Fury,1.44
+5,Yalae81,22,Male,81,Dreamkiss,3.61
+6,Itheria73,36,Male,169,&quot;Interrogator, Blood Blade of the Queen&quot;,2.18
+7,Iskjaskst81,20,Male,162,Abyssal Shard,2.67
+8,Undjask33,22,Male,21,Souleater,1.1
+9,Chanosian48,35,Other / Non-Disclosed,136,Ghastly Adamantite Protector,3.58
+10,Inguron55,23,Male,95,Singed Onyx Warscythe,4.74
+11,Haisrisuir60,23,Male,162,Abyssal Shard,2.67
+12,Saelaephos52,21,Male,116,Renewed Skeletal Katana,4.18
+13,Assjaskan73,22,Male,4,Bloodlord&#39;s Fetish,1.7
+14,Saesrideu94,35,Male,165,Bone Crushing Silver Skewer,4.86
+15,Lisassa64,21,Female,98,&quot;Deadline, Voice Of Subtlety&quot;,2.89
+16,Lisirra25,20,Male,40,Second Chance,2.52
+17,Zontibe81,21,Male,161,Devine,1.76
+18,Reunasu60,22,Female,82,Nirvana,4.9
+19,Chamalo71,30,Male,89,&quot;Blazefury, Protector of Delusions&quot;,4.64
+20,Iathenudil29,20,Male,57,&quot;Despair, Favor of Due Diligence&quot;,4.6
+21,Phiarithdeu40,20,Male,168,&quot;Sun Strike, Jaws of Twisted Visions&quot;,1.48
+22,Siarithria38,38,Other / Non-Disclosed,24,Warped Fetish,3.81
+23,Eyrian71,40,Male,151,Severance,3.4
+24,Siala43,30,Male,141,Persuasion,3.19
+25,Lisirra87,29,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+26,Lirtossa84,11,Male,71,Demise,1.61
+27,Eusri44,7,Male,96,Blood-Forged Skeletal Spine,3.09
+28,Aela59,21,Male,119,&quot;Stormbringer, Dark Blade of Ending Misery&quot;,4.32
+29,Tyida79,24,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+30,Idai61,19,Male,140,Striker,2.94
+31,Farusrian86,37,Male,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+32,Aeralria27,10,Male,133,Faith&#39;s Scimitar,4.09
+33,Haillyrgue51,7,Male,44,Bonecarvin Battle Axe,2.38
+34,Sondim73,19,Male,160,Azurewrath,4.4
+35,Jeyciman68,22,Male,53,Vengeance Cleaver,2.05
+36,Idaisuir85,30,Male,76,Haunted Bronzed Bludgeon,3.15
+37,Seuthep89,8,Male,73,Ritual Mace,2.05
+38,Reulae52,10,Female,116,Renewed Skeletal Katana,4.18
+39,Sondilsaya62,21,Male,172,Blade of the Grave,3.14
+40,Aerithriaphos45,20,Male,143,Frenzied Scimitar,1.56
+41,Assosia88,20,Female,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+42,Aidaillodeu39,18,Male,72,Winter&#39;s Bite,3.77
+43,Aelly27,24,Male,116,Renewed Skeletal Katana,4.18
+44,Tyeosri53,24,Male,9,&quot;Thorn, Conqueror of the Corrupted&quot;,2.73
+45,Haerith37,23,Male,181,Reaper&#39;s Toll,1.66
+46,Yasrisu92,27,Male,102,Avenger,3.44
+47,Chanuchi25,20,Male,170,Shadowsteel,3.97
+48,Asur96,20,Male,138,&quot;Peacekeeper, Wit of Dark Magic&quot;,4.74
+49,Iaralrgue74,33,Male,110,Suspension,1.44
+50,Saelaephos52,21,Male,22,Amnesia,2.18
+51,Chanosia34,22,Male,15,Soul Infused Crystal,2.96
+52,Aelin32,20,Male,60,Wolf,3.54
+53,Ilosianya35,32,Male,176,Relentless Iron Skewer,2.84
+54,Zhisrisu83,10,Male,25,Hero Cane,4.35
+55,Phaelap26,25,Female,84,Arcane Gem,3.79
+56,Raesty92,12,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+57,Palyon91,21,Male,80,Dreamsong,3.39
+58,Tyisur83,23,Male,152,Darkheart,1.74
+59,Yaliru88,19,Male,105,Hailstorm Shadowsteel Scythe,3.03
+60,Yadanu52,34,Male,44,Bonecarvin Battle Axe,2.38
+61,Jiskimya77,17,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+62,Yadaphos40,30,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+63,Alo38,20,Male,125,Whistling Mithril Warblade,1.0
+64,Phaena87,20,Male,56,Foul Titanium Battle Axe,2.92
+65,Chamirraya83,25,Male,34,Retribution Axe,2.22
+66,Chanastsda67,21,Female,6,Rusty Skull,3.7
+67,Lisim78,20,Male,138,&quot;Peacekeeper, Wit of Dark Magic&quot;,4.74
+68,Indonmol95,15,Male,27,&quot;Riddle, Tribute of Ended Dreams&quot;,3.3
+69,Jiskossa61,24,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+70,Pheodai94,29,Male,143,Frenzied Scimitar,1.56
+71,Hari50,20,Female,29,&quot;Chaos, Ender of the End&quot;,1.98
+72,Marilsa69,25,Female,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+73,Assistasda42,21,Male,68,&quot;Storm-Weaver, Slayer of Inception&quot;,4.32
+74,Lisosia93,25,Male,89,&quot;Blazefury, Protector of Delusions&quot;,4.64
+75,Philodil43,33,Male,124,Venom Claymore,1.29
+76,Mindadaran26,13,Female,88,&quot;Emberling, Defender of Delusions&quot;,3.75
+77,Lirtosia63,34,Male,20,Netherbane,3.27
+78,Haillyrgue51,7,Male,50,Dawn,4.6
+79,Assjaskan56,26,Male,15,Soul Infused Crystal,2.96
+80,Irithlis29,23,Male,165,Bone Crushing Silver Skewer,4.86
+81,Heudai45,8,Female,174,Primitive Blade,3.47
+82,Haerithp41,16,Other / Non-Disclosed,160,Azurewrath,4.4
+83,Aina42,25,Male,12,Dawne,1.02
+84,Jiskjask60,21,Female,34,Retribution Axe,2.22
+85,Umolrian85,32,Female,33,Curved Axe,1.16
+86,Qarirwen82,33,Male,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+87,Aelin32,20,Male,151,Severance,3.4
+88,Laedallo55,30,Male,82,Nirvana,4.9
+89,Eoralrap26,22,Male,17,&quot;Lazarus, Terror of the Earth&quot;,1.7
+90,Undosian34,21,Male,60,Wolf,3.54
+91,Chadolyla44,20,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+92,Chadistaya75,21,Female,39,&quot;Betrayal, Whisper of Grieving Widows&quot;,3.94
+93,Yathedeu43,22,Male,88,&quot;Emberling, Defender of Delusions&quot;,3.75
+94,Aina43,19,Male,96,Blood-Forged Skeletal Spine,3.09
+95,Ilassast39,18,Male,164,Exiled Doomblade,1.63
+96,Lisassala98,16,Male,56,Foul Titanium Battle Axe,2.92
+97,Aiduecal76,20,Male,134,Undead Crusader,4.5
+98,Chadossa89,23,Male,141,Persuasion,3.19
+99,Haisrisuir60,23,Male,101,Final Critic,4.19
+100,Pheodaisun84,30,Male,12,Dawne,1.02
+101,Heollyriap59,21,Male,174,Primitive Blade,3.47
+102,Maropast28,24,Male,109,&quot;Downfall, Scalpel Of The Emperor&quot;,4.76
+103,Frichim77,24,Male,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+104,Thryallym62,24,Male,53,Vengeance Cleaver,2.05
+105,Eulanurin88,27,Male,10,Sleepwalker,1.79
+106,Lassjaskan73,22,Male,54,Eternal Cleaver,2.5
+107,Tyaerith73,36,Male,99,&quot;Expiration, Warscythe Of Lost Worlds&quot;,1.71
+108,Sondadarya58,19,Male,85,Malificent Bag,1.75
+109,Hirirap39,22,Male,33,Curved Axe,1.16
+110,Ririp86,25,Male,139,&quot;Mercy, Katana of Dismay&quot;,4.94
+111,Sundim98,21,Other / Non-Disclosed,41,Orbit,4.75
+112,Iskichinya81,21,Female,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+113,Phyali88,15,Female,140,Striker,2.94
+114,Undirrala66,22,Male,150,Deathraze,2.85
+115,Nitherian58,28,Male,13,Serenity,1.41
+116,Lassilsala30,21,Male,139,&quot;Mercy, Katana of Dismay&quot;,4.94
+117,Frichaststa61,21,Female,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+118,Pheodaisun84,30,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+119,Frichosia58,15,Female,87,&quot;Deluge, Edge of the West&quot;,4.43
+120,Lisosia93,25,Male,24,Warped Fetish,3.81
+121,Ilosia37,23,Male,1,Crucifer,3.26
+122,Lisista27,16,Male,174,Primitive Blade,3.47
+123,Seudaillorap38,27,Male,81,Dreamkiss,3.61
+124,Aesty53,21,Male,150,Deathraze,2.85
+125,Yathecal82,20,Female,62,Piece Maker,1.87
+126,Frichim77,24,Male,75,Brutality Ivory Warmace,2.42
+127,Lisossanya98,37,Male,102,Avenger,3.44
+128,Iral74,21,Male,58,&quot;Freak&#39;s Bite, Favor of Holy Might&quot;,4.14
+129,Lisast87,19,Male,74,Yearning Crusher,4.18
+130,Maridisya31,25,Male,120,Agatha,3.08
+131,Jiskassa76,22,Male,62,Piece Maker,1.87
+132,Inguron55,23,Male,145,Fiery Glass Crusader,4.58
+133,Phaena87,20,Male,0,Splinter,1.28
+134,Phyali88,15,Female,2,Verdict,2.48
+135,Ethriel85,30,Male,146,Warped Iron Scimitar,3.1
+136,Iskirra45,22,Male,105,Hailstorm Shadowsteel Scythe,3.03
+137,Iri67,20,Male,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+138,Rarallo90,33,Male,136,Ghastly Adamantite Protector,3.58
+139,Lisasi93,13,Male,158,&quot;Darkheart, Butcher of the Champion&quot;,2.45
+140,Hari50,20,Female,8,&quot;Purgatory, Gem of Regret&quot;,3.93
+141,Zhisrisu83,10,Male,60,Wolf,3.54
+142,Adastirin33,35,Female,175,Woeful Adamantite Claymore,4.48
+143,Eyista89,34,Male,124,Venom Claymore,1.29
+144,Ili43,18,Male,22,Amnesia,2.18
+145,Chamirra53,23,Male,46,Hopeless Ebon Dualblade,1.33
+146,Aidaillodeu39,18,Male,133,Faith&#39;s Scimitar,4.09
+147,Hailaphos89,35,Male,24,Warped Fetish,3.81
+148,Iskadarya95,20,Male,148,&quot;Warmonger, Gift of Suffering&#39;s End&quot;,4.03
+149,Qilatista90,17,Male,161,Devine,1.76
+150,Inasti31,17,Male,0,Splinter,1.28
+151,Marilsanya48,25,Male,105,Hailstorm Shadowsteel Scythe,3.03
+152,Marjask87,20,Male,110,Suspension,1.44
+153,Chanjaskan89,21,Male,164,Exiled Doomblade,1.63
+154,Hyaduesu61,20,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+155,Aillyrin83,10,Female,98,&quot;Deadline, Voice Of Subtlety&quot;,2.89
+156,Eyrian71,40,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+157,Marast30,18,Female,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+158,Sundadar27,31,Male,111,Misery&#39;s End,4.89
+159,Tyaelorap29,25,Male,39,&quot;Betrayal, Whisper of Grieving Widows&quot;,3.94
+160,Lirtimst73,24,Male,44,Bonecarvin Battle Axe,2.38
+161,Iri67,20,Male,3,Phantomlight,2.49
+162,Styaduen40,17,Male,181,Reaper&#39;s Toll,1.66
+163,Sidap51,11,Male,65,Conqueror Adamantite Mace,4.24
+164,Chanastst38,22,Male,96,Blood-Forged Skeletal Spine,3.09
+165,Lirtassa52,15,Male,183,Dragon&#39;s Greatsword,1.09
+166,Sondim68,22,Female,30,Stormcaller,2.21
+167,Aeral97,23,Male,157,&quot;Spada, Etcher of Hatred&quot;,4.8
+168,Iskjaskst81,20,Male,85,Malificent Bag,1.75
+169,Heosurnuru52,16,Female,123,Twilight&#39;s Carver,2.28
+170,Lisopela58,22,Male,75,Brutality Ivory Warmace,2.42
+171,Caesrinusuir82,30,Male,102,Avenger,3.44
+172,Tyirinu79,21,Male,65,Conqueror Adamantite Mace,4.24
+173,Fironon91,30,Male,5,Putrid Fan,4.08
+174,Lassjask63,30,Male,144,Blood Infused Guardian,1.94
+175,Indcil77,17,Male,103,Singed Scalpel,4.35
+176,Chamimla73,17,Male,157,&quot;Spada, Etcher of Hatred&quot;,4.8
+177,Syathe73,30,Female,135,Warped Diamond Crusader,1.4
+178,Baelollodeu94,20,Female,57,&quot;Despair, Favor of Due Diligence&quot;,4.6
+179,Mindista32,24,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+180,Saena74,24,Male,95,Singed Onyx Warscythe,4.74
+181,Marirrasta50,16,Male,51,Endbringer,4.66
+182,Lamil79,38,Male,154,Feral Katana,4.4
+183,Aenarap34,21,Male,15,Soul Infused Crystal,2.96
+184,Aisur51,28,Male,32,Orenmir,1.14
+185,Thrientossa55,20,Male,150,Deathraze,2.85
+186,Chadista79,30,Male,77,&quot;Piety, Guardian of Riddles&quot;,4.0
+187,Tyeurith29,8,Male,11,Brimstone,3.65
+188,Malunil62,18,Male,88,&quot;Emberling, Defender of Delusions&quot;,3.75
+189,Hiasri33,23,Male,63,Stormfury Mace,4.99
+190,Lisadar44,27,Male,69,&quot;Frenzy, Defender of the Harvest&quot;,1.98
+191,Frichjask31,23,Male,87,&quot;Deluge, Edge of the West&quot;,4.43
+192,Lisjaskya84,25,Male,98,&quot;Deadline, Voice Of Subtlety&quot;,2.89
+193,Ristydru66,27,Male,62,Piece Maker,1.87
+194,Frichast28,20,Male,73,Ritual Mace,2.05
+195,Minduri31,39,Male,113,Solitude&#39;s Reaver,4.07
+196,Maradaran90,35,Female,9,&quot;Thorn, Conqueror of the Corrupted&quot;,2.73
+197,Mindetosya30,24,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+198,Chadolyla44,20,Male,153,Mercenary Sabre,3.74
+199,Ialallo29,15,Female,138,&quot;Peacekeeper, Wit of Dark Magic&quot;,4.74
+200,Pheusrical25,23,Male,114,Yearning Mageblade,3.82
+201,Chanosia60,31,Male,2,Verdict,2.48
+202,Phistym51,37,Male,82,Nirvana,4.9
+203,Aelollo59,33,Male,3,Phantomlight,2.49
+204,Chamimla85,16,Male,0,Splinter,1.28
+205,Jiskimya77,17,Male,149,&quot;Tranquility, Razor of Black Magic&quot;,1.75
+206,Haisurra41,20,Female,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+207,Sondastsda82,24,Male,145,Fiery Glass Crusader,4.58
+208,Qilanrion65,37,Male,105,Hailstorm Shadowsteel Scythe,3.03
+209,Eulasuir89,22,Male,162,Abyssal Shard,2.67
+210,Umolrian85,32,Female,136,Ghastly Adamantite Protector,3.58
+211,Eosrirgue62,17,Male,120,Agatha,3.08
+212,Shaidanu32,23,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+213,Lirtastan49,29,Male,2,Verdict,2.48
+214,Iaralsuir44,23,Male,137,&quot;Aetherius, Boon of the Blessed&quot;,3.39
+215,Ialallo29,15,Female,40,Second Chance,2.52
+216,Tyeudariasuir90,21,Male,136,Ghastly Adamantite Protector,3.58
+217,Cosadar58,38,Male,25,Hero Cane,4.35
+218,Aelastirin39,23,Male,76,Haunted Bronzed Bludgeon,3.15
+219,Aidai53,19,Male,57,&quot;Despair, Favor of Due Diligence&quot;,4.6
+220,Jiskjask85,40,Male,46,Hopeless Ebon Dualblade,1.33
+221,Ealrion88,30,Male,175,Woeful Adamantite Claymore,4.48
+222,Chamjask73,22,Female,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+223,Undirrala66,22,Male,142,Righteous Might,2.62
+224,Lisosia93,25,Male,157,&quot;Spada, Etcher of Hatred&quot;,4.8
+225,Tyaenasti87,24,Female,154,Feral Katana,4.4
+226,Alim85,25,Male,54,Eternal Cleaver,2.5
+227,Haeladil46,18,Male,24,Warped Fetish,3.81
+228,Jiskirran77,20,Other / Non-Disclosed,80,Dreamsong,3.39
+229,Undosia27,17,Male,72,Winter&#39;s Bite,3.77
+230,Peorith44,24,Male,102,Avenger,3.44
+231,Yarithsurgue62,26,Male,139,&quot;Mercy, Katana of Dismay&quot;,4.94
+232,Sundadar27,31,Male,114,Yearning Mageblade,3.82
+233,Taeduenu92,19,Female,66,Victor Iron Spikes,4.4
+234,Chamimla85,16,Male,97,&quot;Swan Song, Gouger Of Terror&quot;,2.5
+235,Rairin89,24,Male,163,Thunderfury Scimitar,3.45
+236,Aerithriaphos46,16,Male,107,&quot;Splitter, Foe Of Subtlety&quot;,2.18
+237,Idairin51,20,Other / Non-Disclosed,16,Restored Bauble,3.55
+238,Lisista54,21,Male,42,The Decapitator,1.75
+239,Eodailis27,30,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+240,Lirtastsda29,16,Male,82,Nirvana,4.9
+241,Undilsan50,22,Male,10,Sleepwalker,1.79
+242,Eodaisu60,16,Other / Non-Disclosed,39,&quot;Betrayal, Whisper of Grieving Widows&quot;,3.94
+243,Quaranmol58,24,Male,83,Lifebender,3.33
+244,Lirtossa60,24,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+245,Lisim78,20,Male,85,Malificent Bag,1.75
+246,Lirtilsa71,24,Male,139,&quot;Mercy, Katana of Dismay&quot;,4.94
+247,Iskadarya95,20,Male,82,Nirvana,4.9
+248,Isursuir31,44,Male,137,&quot;Aetherius, Boon of the Blessed&quot;,3.39
+249,Sundirrala66,20,Male,16,Restored Bauble,3.55
+250,Saerallora71,23,Male,87,&quot;Deluge, Edge of the West&quot;,4.43
+251,Iasur80,22,Male,23,Crucifer,1.99
+252,Tyaelo67,39,Male,92,Final Critic,4.88
+253,Aesty53,21,Male,28,&quot;Flux, Destroyer of Due Diligence&quot;,1.06
+254,Quanunwen42,23,Female,94,Mourning Blade,3.49
+255,Sondastsda82,24,Male,71,Demise,1.61
+256,Chamirra53,23,Male,182,Toothpick,4.03
+257,Yasur35,26,Male,175,Woeful Adamantite Claymore,4.48
+258,Assehoan67,26,Male,149,&quot;Tranquility, Razor of Black Magic&quot;,1.75
+259,Haellysu29,20,Male,72,Winter&#39;s Bite,3.77
+260,Saida58,16,Male,70,Hope&#39;s End,1.03
+261,Tyeosri53,24,Male,141,Persuasion,3.19
+262,Chamadar79,15,Male,172,Blade of the Grave,3.14
+263,Aeral43,24,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+264,Saesrideu94,35,Male,119,&quot;Stormbringer, Dark Blade of Ending Misery&quot;,4.32
+265,Lirtirra37,25,Male,172,Blade of the Grave,3.14
+266,Siala43,30,Male,113,Solitude&#39;s Reaver,4.07
+267,Tyidaim51,16,Female,41,Orbit,4.75
+268,Inasti31,17,Male,71,Demise,1.61
+269,Lassassast73,15,Male,18,&quot;Torchlight, Bond of Storms&quot;,4.65
+270,Assassasta79,38,Male,85,Malificent Bag,1.75
+271,Heollyra92,22,Male,166,Thirsty Iron Reaver,3.07
+272,Anallorgue57,8,Male,133,Faith&#39;s Scimitar,4.09
+273,Phyali88,15,Female,92,Final Critic,4.88
+274,Aerithllora36,29,Female,82,Nirvana,4.9
+275,Smaistysu35,30,Male,173,Stormfury Longsword,4.93
+276,Tyidaim51,16,Female,9,&quot;Thorn, Conqueror of the Corrupted&quot;,2.73
+277,Ennalmol65,24,Male,92,Final Critic,4.88
+278,Iskichinya81,21,Female,167,&quot;Malice, Legacy of the Queen&quot;,3.61
+279,Yarithrgue83,20,Male,163,Thunderfury Scimitar,3.45
+280,Yana46,20,Female,16,Restored Bauble,3.55
+281,Sondimla25,19,Male,68,&quot;Storm-Weaver, Slayer of Inception&quot;,4.32
+282,Aidai61,21,Male,155,War-Forged Gold Deflector,1.01
+283,Wailin72,21,Female,9,&quot;Thorn, Conqueror of the Corrupted&quot;,2.73
+284,Firan91,24,Male,128,&quot;Blazeguard, Reach of Eternity&quot;,4.91
+285,Alaesu91,26,Male,163,Thunderfury Scimitar,3.45
+286,Aellynun67,25,Male,153,Mercenary Sabre,3.74
+287,Rilaera56,20,Male,5,Putrid Fan,4.08
+288,Eulaestira36,18,Male,156,Soul-Forged Steel Shortsword,1.77
+289,Marim28,25,Female,83,Lifebender,3.33
+290,Idastidru52,24,Male,147,&quot;Hellreaver, Heirloom of Inception&quot;,4.93
+291,Idairin51,20,Other / Non-Disclosed,35,Heartless Bone Dualblade,3.45
+292,Lisasi93,13,Male,70,Hope&#39;s End,1.03
+293,Lisopela58,22,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+294,Ilirrasda54,37,Male,171,Scalpel,1.79
+295,Alaephos75,23,Male,52,Hatred,4.84
+296,Syalollorap93,22,Female,65,Conqueror Adamantite Mace,4.24
+297,Heosurnuru52,16,Female,169,&quot;Interrogator, Blood Blade of the Queen&quot;,2.18
+298,Minduli80,25,Male,110,Suspension,1.44
+299,Lirtossa84,11,Male,164,Exiled Doomblade,1.63
+300,Chanastya70,22,Male,136,Ghastly Adamantite Protector,3.58
+301,Frichadaran88,25,Male,106,Crying Steel Sickle,3.41
+302,Siallylis44,20,Male,4,Bloodlord&#39;s Fetish,1.7
+303,Aeri84,24,Male,71,Demise,1.61
+304,Iasursti71,24,Male,181,Reaper&#39;s Toll,1.66
+305,Siallylis44,20,Male,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+306,Mindilsa34,24,Female,38,&quot;The Void, Vengeance of Dark Magic&quot;,2.37
+307,Chamastya76,34,Male,53,Vengeance Cleaver,2.05
+308,Undirra73,34,Male,98,&quot;Deadline, Voice Of Subtlety&quot;,2.89
+309,Aestysu37,25,Male,170,Shadowsteel,3.97
+310,Chadadarla74,30,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+311,Anallorgue57,8,Male,71,Demise,1.61
+312,Strithenu87,20,Male,147,&quot;Hellreaver, Heirloom of Inception&quot;,4.93
+313,Iasrira89,23,Male,182,Toothpick,4.03
+314,Ialidru40,24,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+315,Tyisur83,23,Male,107,&quot;Splitter, Foe Of Subtlety&quot;,2.18
+316,Tyalaesu89,25,Male,15,Soul Infused Crystal,2.96
+317,Tyidainu31,18,Female,3,Phantomlight,2.49
+318,Iskadarya95,20,Male,91,Celeste,4.17
+319,Rarallo90,33,Male,144,Blood Infused Guardian,1.94
+320,Lirtilsa72,24,Male,77,&quot;Piety, Guardian of Riddles&quot;,4.0
+321,Undjaskla97,33,Male,118,&quot;Ghost Reaver, Longsword of Magic&quot;,2.17
+322,Saedaiphos46,18,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+323,Tyisur83,23,Male,131,Fury,1.44
+324,Aerithnucal56,15,Male,154,Feral Katana,4.4
+325,Hiasri33,23,Male,54,Eternal Cleaver,2.5
+326,Lisossa46,25,Male,54,Eternal Cleaver,2.5
+327,Layjask75,22,Female,17,&quot;Lazarus, Terror of the Earth&quot;,1.7
+328,Lisista63,17,Male,152,Darkheart,1.74
+329,Ceoral34,20,Male,145,Fiery Glass Crusader,4.58
+330,Hilaerin92,23,Male,167,&quot;Malice, Legacy of the Queen&quot;,3.61
+331,Chadilsasta32,23,Male,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+332,Undassa89,25,Male,161,Devine,1.76
+333,Iduenu77,17,Female,114,Yearning Mageblade,3.82
+334,Lisosia66,21,Male,11,Brimstone,3.65
+335,Undimsya85,33,Male,67,&quot;Celeste, Incarnation of the Corrupted&quot;,3.46
+336,Phaedue89,22,Female,45,Glinting Glass Edge,3.85
+337,Yadacal26,15,Male,17,&quot;Lazarus, Terror of the Earth&quot;,1.7
+338,Lisossa25,22,Male,13,Serenity,1.41
+339,Ilmol66,8,Female,124,Venom Claymore,1.29
+340,Yastyriaphos75,22,Male,41,Orbit,4.75
+341,Hiasurria41,41,Male,71,Demise,1.61
+342,Palatyon26,21,Male,38,&quot;The Void, Vengeance of Dark Magic&quot;,2.37
+343,Chadilsasta32,23,Male,49,&quot;The Oculus, Token of Lost Worlds&quot;,2.96
+344,Qilalista41,23,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+345,Hada39,19,Male,2,Verdict,2.48
+346,Saedaiphos46,18,Male,121,Massacre,1.6
+347,Chamilsala65,23,Female,11,Brimstone,3.65
+348,Eulaestira36,18,Male,38,&quot;The Void, Vengeance of Dark Magic&quot;,2.37
+349,Sundirrala66,20,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+350,Rairith81,15,Other / Non-Disclosed,34,Retribution Axe,2.22
+351,Assistasda42,21,Male,121,Massacre,1.6
+352,Ilarin91,22,Male,79,&quot;Alpha, Oath of Zeal&quot;,4.05
+353,Ryanara76,25,Male,174,Primitive Blade,3.47
+354,Undista85,21,Male,163,Thunderfury Scimitar,3.45
+355,Tyeoralru41,15,Male,140,Striker,2.94
+356,Pheosrinudeu70,20,Male,138,&quot;Peacekeeper, Wit of Dark Magic&quot;,4.74
+357,Heuli25,23,Female,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+358,Pheutherin27,24,Male,74,Yearning Crusher,4.18
+359,Chadirra90,18,Male,73,Ritual Mace,2.05
+360,Ali84,29,Male,14,Possessed Core,2.61
+361,Frichjaskan98,25,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+362,Malil90,22,Male,107,&quot;Splitter, Foe Of Subtlety&quot;,2.18
+363,Aina42,25,Male,45,Glinting Glass Edge,3.85
+364,Yarithllodeu72,22,Male,88,&quot;Emberling, Defender of Delusions&quot;,3.75
+365,Tyaedainu44,25,Male,43,Foul Edge,3.54
+366,Hirirap39,22,Male,31,Trickster,1.55
+367,Eodailis27,30,Male,138,&quot;Peacekeeper, Wit of Dark Magic&quot;,4.74
+368,Ethron58,20,Male,3,Phantomlight,2.49
+369,Heuli25,23,Female,137,&quot;Aetherius, Boon of the Blessed&quot;,3.39
+370,Idai61,19,Male,45,Glinting Glass Edge,3.85
+371,Eusurdeu49,23,Male,155,War-Forged Gold Deflector,1.01
+372,Saistyphos30,35,Male,64,Fusion Pummel,4.82
+373,Aina42,25,Male,103,Singed Scalpel,4.35
+374,Saisrilis27,16,Male,85,Malificent Bag,1.75
+375,Hallysucal81,25,Male,181,Reaper&#39;s Toll,1.66
+376,Ilimya66,33,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+377,Raysistast71,20,Male,11,Brimstone,3.65
+378,Haedairiadru51,23,Male,96,Blood-Forged Skeletal Spine,3.09
+379,Tyananurgue44,18,Male,100,Blindscythe,3.27
+380,Risty84,25,Male,50,Dawn,4.6
+381,Aerillorin70,16,Male,83,Lifebender,3.33
+382,Phistyn52,24,Male,164,Exiled Doomblade,1.63
+383,Yalo85,34,Male,11,Brimstone,3.65
+384,Chamirrasya33,21,Female,110,Suspension,1.44
+385,Hiral75,22,Male,29,&quot;Chaos, Ender of the End&quot;,1.98
+386,Isursti83,21,Male,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+387,Bartassaya73,26,Male,39,&quot;Betrayal, Whisper of Grieving Widows&quot;,3.94
+388,Aeda94,17,Male,128,&quot;Blazeguard, Reach of Eternity&quot;,4.91
+389,Quinarap53,15,Male,157,&quot;Spada, Etcher of Hatred&quot;,4.8
+390,Asur53,26,Male,75,Brutality Ivory Warmace,2.42
+391,Alarap40,18,Male,20,Netherbane,3.27
+392,Sida61,20,Female,181,Reaper&#39;s Toll,1.66
+393,Hiarideu73,20,Male,54,Eternal Cleaver,2.5
+394,Lassassasda30,12,Male,60,Wolf,3.54
+395,Ennoncil86,17,Male,152,Darkheart,1.74
+396,Siralsudeu54,20,Male,131,Fury,1.44
+397,Eusri26,25,Male,100,Blindscythe,3.27
+398,Ardcil81,34,Male,96,Blood-Forged Skeletal Spine,3.09
+399,Marilsasya33,19,Male,143,Frenzied Scimitar,1.56
+400,Ilarin91,22,Male,72,Winter&#39;s Bite,3.77
+401,Lirtim36,15,Other / Non-Disclosed,46,Hopeless Ebon Dualblade,1.33
+402,Heunadil74,23,Female,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+403,Frichadar89,24,Male,162,Abyssal Shard,2.67
+404,Chamirrasya33,21,Female,71,Demise,1.61
+405,Aesurstilis64,25,Male,70,Hope&#39;s End,1.03
+406,Idaidil28,15,Male,100,Blindscythe,3.27
+407,Idai61,19,Male,131,Fury,1.44
+408,Raesty92,12,Male,53,Vengeance Cleaver,2.05
+409,Lisotesta51,15,Female,144,Blood Infused Guardian,1.94
+410,Strithenu87,20,Male,99,&quot;Expiration, Warscythe Of Lost Worlds&quot;,1.71
+411,Lisico81,10,Male,101,Final Critic,4.19
+412,Lisiriya82,32,Male,86,Stormfury Lantern,2.27
+413,Siana77,12,Male,93,Apocalyptic Battlescythe,1.97
+414,Marokian45,23,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+415,Sausosia74,22,Male,120,Agatha,3.08
+416,Aestysu37,25,Male,13,Serenity,1.41
+417,Pheodaisun84,30,Male,98,&quot;Deadline, Voice Of Subtlety&quot;,2.89
+418,Marim28,25,Female,125,Whistling Mithril Warblade,1.0
+419,Iaralrgue74,33,Male,171,Scalpel,1.79
+420,Assesi91,23,Male,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+421,Yadaphos40,30,Male,26,Unholy Wand,1.12
+422,Eusri70,24,Female,154,Feral Katana,4.4
+423,Aisurria69,24,Male,10,Sleepwalker,1.79
+424,Iarilis73,10,Male,149,&quot;Tranquility, Razor of Black Magic&quot;,1.75
+425,Raisty38,15,Male,20,Netherbane,3.27
+426,Ilista82,23,Male,32,Orenmir,1.14
+427,Leyirra83,24,Female,170,Shadowsteel,3.97
+428,Aelly27,24,Male,14,Possessed Core,2.61
+429,Aiduesu86,22,Female,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+430,Frichynde86,15,Male,164,Exiled Doomblade,1.63
+431,Aelollo59,33,Male,172,Blade of the Grave,3.14
+432,Hisridru55,18,Male,120,Agatha,3.08
+433,Chamossa77,21,Male,156,Soul-Forged Steel Shortsword,1.77
+434,Irillo49,20,Male,84,Arcane Gem,3.79
+435,Lirtastsya71,21,Male,93,Apocalyptic Battlescythe,1.97
+436,Umolrian85,32,Female,80,Dreamsong,3.39
+437,Frichosiala98,24,Female,43,Foul Edge,3.54
+438,Qilunan34,23,Male,145,Fiery Glass Crusader,4.58
+439,Quarrion42,22,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+440,Aisurdru79,29,Female,75,Brutality Ivory Warmace,2.42
+441,Hiaral50,15,Male,156,Soul-Forged Steel Shortsword,1.77
+442,Zontibe81,21,Male,84,Arcane Gem,3.79
+443,Iarallo65,26,Male,149,&quot;Tranquility, Razor of Black Magic&quot;,1.75
+444,Sondassasya91,21,Female,24,Warped Fetish,3.81
+445,Phaelap26,25,Female,150,Deathraze,2.85
+446,Chanossast57,7,Female,119,&quot;Stormbringer, Dark Blade of Ending Misery&quot;,4.32
+447,Yalae81,22,Male,120,Agatha,3.08
+448,Chanjask65,18,Female,68,&quot;Storm-Weaver, Slayer of Inception&quot;,4.32
+449,Ethralista69,13,Male,34,Retribution Axe,2.22
+450,Sondistanya61,18,Female,35,Heartless Bone Dualblade,3.45
+451,Eudanu32,15,Female,122,Unending Tyranny,2.85
+452,Marilsasya33,19,Male,32,Orenmir,1.14
+453,Euthe35,24,Male,70,Hope&#39;s End,1.03
+454,Lassimla92,25,Male,1,Crucifer,3.26
+455,Lisossala30,20,Male,103,Singed Scalpel,4.35
+456,Phaena87,20,Male,124,Venom Claymore,1.29
+457,Eulae84,25,Male,61,Ragnarok,3.87
+458,Chamadarnya73,29,Male,166,Thirsty Iron Reaver,3.07
+459,Eolan54,30,Male,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+460,Assistasda90,25,Male,103,Singed Scalpel,4.35
+461,Ennrian78,24,Male,168,&quot;Sun Strike, Jaws of Twisted Visions&quot;,1.48
+462,Undirrasta89,20,Male,144,Blood Infused Guardian,1.94
+463,Frichadaran88,25,Male,48,&quot;Rage, Legacy of the Lone Victor&quot;,2.48
+464,Rianistast50,22,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+465,Sondastsda82,24,Male,4,Bloodlord&#39;s Fetish,1.7
+466,Undare39,23,Male,112,Worldbreaker,2.6
+467,Adairialis76,16,Male,123,Twilight&#39;s Carver,2.28
+468,Aesur96,23,Male,30,Stormcaller,2.21
+469,Tyialisudeu65,24,Male,148,&quot;Warmonger, Gift of Suffering&#39;s End&quot;,4.03
+470,Arirgue63,29,Male,4,Bloodlord&#39;s Fetish,1.7
+471,Sundadarla27,23,Male,122,Unending Tyranny,2.85
+472,Lisopela58,22,Male,18,&quot;Torchlight, Bond of Storms&quot;,4.65
+473,Eyircil84,21,Male,25,Hero Cane,4.35
+474,Ina92,31,Male,145,Fiery Glass Crusader,4.58
+475,Lirtistanya48,24,Male,6,Rusty Skull,3.7
+476,Marassa62,21,Male,103,Singed Scalpel,4.35
+477,Mindossa76,41,Male,173,Stormfury Longsword,4.93
+478,Sondim68,22,Female,35,Heartless Bone Dualblade,3.45
+479,Chanjaskan89,21,Male,60,Wolf,3.54
+480,Salilis27,40,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+481,Sondossa69,7,Male,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+482,Sundjask71,32,Female,77,&quot;Piety, Guardian of Riddles&quot;,4.0
+483,Saistyphos30,35,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+484,Chanosian48,35,Other / Non-Disclosed,39,&quot;Betrayal, Whisper of Grieving Widows&quot;,3.94
+485,Errian63,26,Female,94,Mourning Blade,3.49
+486,Eurithphos97,9,Male,53,Vengeance Cleaver,2.05
+487,Raillydeu47,14,Male,93,Apocalyptic Battlescythe,1.97
+488,Malon70,23,Male,44,Bonecarvin Battle Axe,2.38
+489,Jiskimsda56,28,Male,32,Orenmir,1.14
+490,Idastidru52,24,Male,148,&quot;Warmonger, Gift of Suffering&#39;s End&quot;,4.03
+491,Marughi89,22,Male,22,Amnesia,2.18
+492,Ingatcil75,23,Male,143,Frenzied Scimitar,1.56
+493,Chanirrasta87,14,Male,139,&quot;Mercy, Katana of Dismay&quot;,4.94
+494,Alaesu77,30,Male,3,Phantomlight,2.49
+495,Ermol76,24,Male,97,&quot;Swan Song, Gouger Of Terror&quot;,2.5
+496,Tyeuduen32,23,Male,79,&quot;Alpha, Oath of Zeal&quot;,4.05
+497,Yadacal26,15,Male,52,Hatred,4.84
+498,Firon67,35,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+499,Iadueria43,24,Male,99,&quot;Expiration, Warscythe Of Lost Worlds&quot;,1.71
+500,Pheulidil31,20,Male,100,Blindscythe,3.27
+501,Eodairu79,32,Male,151,Severance,3.4
+502,Frichocesta66,20,Male,16,Restored Bauble,3.55
+503,Iaralsuir44,23,Male,59,&quot;Lightning, Etcher of the King&quot;,4.23
+504,Chamilsala65,23,Female,82,Nirvana,4.9
+505,Thourdirra92,19,Male,110,Suspension,1.44
+506,Chadista79,30,Male,25,Hero Cane,4.35
+507,Chanastnya43,22,Male,29,&quot;Chaos, Ender of the End&quot;,1.98
+508,Iskim96,16,Male,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+509,Inguron55,23,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+510,Eulolis41,22,Male,162,Abyssal Shard,2.67
+511,Lassilsala30,21,Male,64,Fusion Pummel,4.82
+512,Sastydeu50,35,Male,169,&quot;Interrogator, Blood Blade of the Queen&quot;,2.18
+513,Ilaesudil92,25,Male,25,Hero Cane,4.35
+514,Yasur85,21,Male,21,Souleater,1.1
+515,Haillyrgue51,7,Male,40,Second Chance,2.52
+516,Aidain51,39,Female,35,Heartless Bone Dualblade,3.45
+517,Aerithnuphos61,39,Male,128,&quot;Blazeguard, Reach of Eternity&quot;,4.91
+518,Yalostiphos68,29,Male,160,Azurewrath,4.4
+519,Eusri70,24,Female,140,Striker,2.94
+520,Chamjask73,22,Female,109,&quot;Downfall, Scalpel Of The Emperor&quot;,4.76
+521,Phistym51,37,Male,50,Dawn,4.6
+522,Meosridil82,18,Male,82,Nirvana,4.9
+523,Aillyriadru65,24,Male,21,Souleater,1.1
+524,Sally64,25,Female,46,Hopeless Ebon Dualblade,1.33
+525,Lirtimst73,24,Male,126,Exiled Mithril Longsword,2.0
+526,Ilosia37,23,Male,133,Faith&#39;s Scimitar,4.09
+527,Lisim51,24,Male,102,Avenger,3.44
+528,Isurria36,22,Female,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+529,Silaera56,21,Male,142,Righteous Might,2.62
+530,Leetirraya83,24,Male,5,Putrid Fan,4.08
+531,Lirtirra81,12,Male,143,Frenzied Scimitar,1.56
+532,Eryon48,16,Male,21,Souleater,1.1
+533,Hada39,19,Male,48,&quot;Rage, Legacy of the Lone Victor&quot;,2.48
+534,Iana95,10,Male,146,Warped Iron Scimitar,3.1
+535,Siralsudeu54,20,Male,155,War-Forged Gold Deflector,1.01
+536,Siallylis44,20,Male,101,Final Critic,4.19
+537,Sondassan80,25,Male,112,Worldbreaker,2.6
+538,Chanadar44,25,Male,141,Persuasion,3.19
+539,Eosurdru76,11,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+540,Shidai42,29,Male,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+541,Aesri53,31,Male,161,Devine,1.76
+542,Syally44,17,Male,22,Amnesia,2.18
+543,Idastidru52,24,Male,121,Massacre,1.6
+544,Ardcil81,34,Male,3,Phantomlight,2.49
+545,Jiskadarst60,16,Male,66,Victor Iron Spikes,4.4
+546,Sondadar26,9,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+547,Malarrian73,18,Male,135,Warped Diamond Crusader,1.4
+548,Yathecal82,20,Female,75,Brutality Ivory Warmace,2.42
+549,Maluncil97,25,Other / Non-Disclosed,146,Warped Iron Scimitar,3.1
+550,Ilunyon70,20,Male,60,Wolf,3.54
+551,Iri67,20,Male,160,Azurewrath,4.4
+552,Hiaral50,15,Male,155,War-Forged Gold Deflector,1.01
+553,Yadam35,28,Male,2,Verdict,2.48
+554,Dyally87,22,Male,63,Stormfury Mace,4.99
+555,Pheosurllorin41,23,Female,7,&quot;Thorn, Satchel of Dark Souls&quot;,1.33
+556,Frichocesta66,20,Male,64,Fusion Pummel,4.82
+557,Frichaya88,42,Male,8,&quot;Purgatory, Gem of Regret&quot;,3.93
+558,Lassadarsda57,25,Female,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+559,Iasrira89,23,Male,34,Retribution Axe,2.22
+560,Zontibe81,21,Male,2,Verdict,2.48
+561,Chanastnya43,22,Male,35,Heartless Bone Dualblade,3.45
+562,Marynde90,30,Male,83,Lifebender,3.33
+563,Isri34,38,Male,142,Righteous Might,2.62
+564,Chamjask73,22,Female,52,Hatred,4.84
+565,Assastnya25,20,Male,179,&quot;Wolf, Promise of the Moonwalker&quot;,4.48
+566,Ardonmol96,20,Male,31,Trickster,1.55
+567,Lassirrasda85,20,Male,102,Avenger,3.44
+568,Syally44,17,Male,123,Twilight&#39;s Carver,2.28
+569,Baelollodeu94,20,Female,87,&quot;Deluge, Edge of the West&quot;,4.43
+570,Chadossa56,20,Male,69,&quot;Frenzy, Defender of the Harvest&quot;,1.98
+571,Poshilsa82,16,Male,165,Bone Crushing Silver Skewer,4.86
+572,Yoishirrala98,17,Female,145,Fiery Glass Crusader,4.58
+573,Sundista37,26,Male,156,Soul-Forged Steel Shortsword,1.77
+574,Undare39,23,Male,131,Fury,1.44
+575,Sondadar26,9,Male,137,&quot;Aetherius, Boon of the Blessed&quot;,3.39
+576,Ilassa51,20,Male,34,Retribution Axe,2.22
+577,Filurarn35,19,Male,128,&quot;Blazeguard, Reach of Eternity&quot;,4.91
+578,Aerithllora36,29,Female,153,Mercenary Sabre,3.74
+579,Marilsa69,25,Female,12,Dawne,1.02
+580,Tyida79,24,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+581,Phaestycal84,23,Male,117,&quot;Heartstriker, Legacy of the Light&quot;,1.79
+582,Irilis75,20,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+583,Aeralstical35,20,Male,49,&quot;The Oculus, Token of Lost Worlds&quot;,2.96
+584,Aelin32,20,Male,115,Spectral Diamond Doomblade,2.04
+585,Chanirrala39,22,Male,85,Malificent Bag,1.75
+586,Chanirra79,23,Female,155,War-Forged Gold Deflector,1.01
+587,Assirra56,22,Male,141,Persuasion,3.19
+588,Lassadarsda57,25,Female,15,Soul Infused Crystal,2.96
+589,Seolollo93,30,Male,106,Crying Steel Sickle,3.41
+590,Iathem87,20,Male,141,Persuasion,3.19
+591,Iasurriacal29,20,Male,113,Solitude&#39;s Reaver,4.07
+592,Lisast98,22,Male,170,Shadowsteel,3.97
+593,Lassimla92,25,Male,128,&quot;Blazeguard, Reach of Eternity&quot;,4.91
+594,Filrion59,27,Male,89,&quot;Blazefury, Protector of Delusions&quot;,4.64
+595,Yathedeu43,22,Male,55,Vindictive Glass Edge,2.27
+596,Seudaillorap38,27,Male,146,Warped Iron Scimitar,3.1
+597,Quinarap53,15,Male,86,Stormfury Lantern,2.27
+598,Halaecal66,22,Male,111,Misery&#39;s End,4.89
+599,Hiaral50,15,Male,13,Serenity,1.41
+600,Iskosian40,16,Male,166,Thirsty Iron Reaver,3.07
+601,Ilastilis78,11,Male,93,Apocalyptic Battlescythe,1.97
+602,Seosrim97,20,Male,65,Conqueror Adamantite Mace,4.24
+603,Lisosia93,25,Male,141,Persuasion,3.19
+604,Lisim51,24,Male,34,Retribution Axe,2.22
+605,Farrian71,18,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+606,Nitherian58,28,Male,123,Twilight&#39;s Carver,2.28
+607,Rithe53,15,Female,80,Dreamsong,3.39
+608,Leyirra83,24,Female,132,Persuasion,3.33
+609,Lisosia93,25,Male,40,Second Chance,2.52
+610,Frichossala54,7,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+611,Chamjaskya75,16,Male,176,Relentless Iron Skewer,2.84
+612,Silaera56,21,Male,52,Hatred,4.84
+613,Quanrion96,21,Female,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+614,Chadadarla74,30,Male,65,Conqueror Adamantite Mace,4.24
+615,Sida61,20,Female,72,Winter&#39;s Bite,3.77
+616,Tyaelaelis94,20,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+617,Chamimla85,16,Male,40,Second Chance,2.52
+618,Aisurdru79,29,Female,183,Dragon&#39;s Greatsword,1.09
+619,Quanenrian83,15,Male,55,Vindictive Glass Edge,2.27
+620,Undosian34,21,Male,109,&quot;Downfall, Scalpel Of The Emperor&quot;,4.76
+621,Seosrim97,20,Male,26,Unholy Wand,1.12
+622,Chanirra64,25,Male,129,&quot;Fate, Vengeance of Eternal Justice&quot;,1.54
+623,Iral74,21,Male,114,Yearning Mageblade,3.82
+624,Marynde90,30,Male,29,&quot;Chaos, Ender of the End&quot;,1.98
+625,Yadaisuir65,20,Male,133,Faith&#39;s Scimitar,4.09
+626,Syathecal44,16,Male,75,Brutality Ivory Warmace,2.42
+627,Arin32,25,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+628,Hada39,19,Male,167,&quot;Malice, Legacy of the Queen&quot;,3.61
+629,Maluncil97,25,Other / Non-Disclosed,107,&quot;Splitter, Foe Of Subtlety&quot;,2.18
+630,Aelaria33,23,Male,171,Scalpel,1.79
+631,Assassa81,27,Male,137,&quot;Aetherius, Boon of the Blessed&quot;,3.39
+632,Filrion83,17,Male,160,Azurewrath,4.4
+633,Chanastnya43,22,Male,80,Dreamsong,3.39
+634,Eoral49,16,Male,103,Singed Scalpel,4.35
+635,Ali84,29,Male,4,Bloodlord&#39;s Fetish,1.7
+636,Chanirrala39,22,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+637,Airi27,24,Other / Non-Disclosed,163,Thunderfury Scimitar,3.45
+638,Eurisuru25,24,Male,22,Amnesia,2.18
+639,Liawista80,27,Male,86,Stormfury Lantern,2.27
+640,Sausosia74,22,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+641,Lisirra58,20,Female,49,&quot;The Oculus, Token of Lost Worlds&quot;,2.96
+642,Chamadarsda63,23,Male,127,&quot;Heartseeker, Reaver of Souls&quot;,3.92
+643,Haestyphos66,21,Male,93,Apocalyptic Battlescythe,1.97
+644,Bartassaya73,26,Male,22,Amnesia,2.18
+645,Phaedasurap84,17,Male,114,Yearning Mageblade,3.82
+646,Mindimnya67,23,Male,116,Renewed Skeletal Katana,4.18
+647,Chadjask85,24,Male,61,Ragnarok,3.87
+648,Eustyria89,39,Male,150,Deathraze,2.85
+649,Iskim66,15,Male,67,&quot;Celeste, Incarnation of the Corrupted&quot;,3.46
+650,Smaistysu35,30,Male,161,Devine,1.76
+651,Lirtilsa72,24,Male,132,Persuasion,3.33
+652,Pheosrinudeu70,20,Male,75,Brutality Ivory Warmace,2.42
+653,Chamast86,32,Female,53,Vengeance Cleaver,2.05
+654,Tyialisudeu65,24,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+655,Lirtassan78,15,Male,20,Netherbane,3.27
+656,Ethrasyon38,26,Male,115,Spectral Diamond Doomblade,2.04
+657,Silaera56,21,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+658,Quilassa66,7,Female,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+659,Lisassasda39,36,Male,140,Striker,2.94
+660,Isri34,38,Male,103,Singed Scalpel,4.35
+661,Strithenu87,20,Male,60,Wolf,3.54
+662,Mindilsa60,21,Male,0,Splinter,1.28
+663,Lalossa38,25,Male,72,Winter&#39;s Bite,3.77
+664,Chamistast30,31,Male,47,&quot;Alpha, Reach of Ending Hope&quot;,3.58
+665,Hariphos58,17,Male,73,Ritual Mace,2.05
+666,Assilsan72,20,Female,82,Nirvana,4.9
+667,Inasuir29,40,Female,66,Victor Iron Spikes,4.4
+668,Chanilsasda38,15,Male,40,Second Chance,2.52
+669,Mindesi74,22,Male,45,Glinting Glass Edge,3.85
+670,Aiduecal76,20,Male,120,Agatha,3.08
+671,Caesrinusuir82,30,Male,152,Darkheart,1.74
+672,Ililsan66,9,Male,122,Unending Tyranny,2.85
+673,Idacal95,30,Male,130,Alpha,2.07
+674,Aeral68,43,Male,77,&quot;Piety, Guardian of Riddles&quot;,4.0
+675,Lirtastsda29,16,Male,144,Blood Infused Guardian,1.94
+676,Idastidru52,24,Male,111,Misery&#39;s End,4.89
+677,Tyarithn67,27,Male,32,Orenmir,1.14
+678,Rarallo90,33,Male,108,&quot;Extraction, Quickblade Of Trembling Hands&quot;,3.53
+679,Iarilis73,10,Male,153,Mercenary Sabre,3.74
+680,Asty82,25,Male,96,Blood-Forged Skeletal Spine,3.09
+681,Yalaeria91,33,Male,28,&quot;Flux, Destroyer of Due Diligence&quot;,1.06
+682,Lirtossa60,24,Male,135,Warped Diamond Crusader,1.4
+683,Ialallo29,15,Female,145,Fiery Glass Crusader,4.58
+684,Phaestycal84,23,Male,169,&quot;Interrogator, Blood Blade of the Queen&quot;,2.18
+685,Halaecal66,22,Male,34,Retribution Axe,2.22
+686,Chadjask77,8,Male,147,&quot;Hellreaver, Heirloom of Inception&quot;,4.93
+687,Ealiril69,35,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+688,Saistyphos30,35,Male,29,&quot;Chaos, Ender of the End&quot;,1.98
+689,Undjaskla97,33,Male,76,Haunted Bronzed Bludgeon,3.15
+690,Idaidil28,15,Male,68,&quot;Storm-Weaver, Slayer of Inception&quot;,4.32
+691,Lirtistanya48,24,Male,112,Worldbreaker,2.6
+692,Quaecjask96,9,Male,78,&quot;Glimmer, Ender of the Moon&quot;,4.4
+693,Firatan58,23,Male,88,&quot;Emberling, Defender of Delusions&quot;,3.75
+694,Mindesi74,22,Male,164,Exiled Doomblade,1.63
+695,Lamil79,38,Male,111,Misery&#39;s End,4.89
+696,Yarolwen77,30,Male,87,&quot;Deluge, Edge of the West&quot;,4.43
+697,Tyaelistidru84,19,Female,1,Crucifer,3.26
+698,Yarithrin84,30,Female,58,&quot;Freak&#39;s Bite, Favor of Holy Might&quot;,4.14
+699,Tyaelly53,17,Female,130,Alpha,2.07
+700,Chanosia60,31,Male,90,Betrayer,2.94
+701,Phiristi62,25,Male,10,Sleepwalker,1.79
+702,Ililsasya43,19,Male,12,Dawne,1.02
+703,Aithelis62,21,Male,160,Azurewrath,4.4
+704,Undotesta33,18,Male,95,Singed Onyx Warscythe,4.74
+705,Aelidru27,22,Male,183,Dragon&#39;s Greatsword,1.09
+706,Chanossanya44,20,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+707,Maradarnya40,20,Male,38,&quot;The Void, Vengeance of Dark Magic&quot;,2.37
+708,Lirtastsya71,21,Male,67,&quot;Celeste, Incarnation of the Corrupted&quot;,3.46
+709,Lisast87,19,Male,75,Brutality Ivory Warmace,2.42
+710,Lisossa25,22,Male,99,&quot;Expiration, Warscythe Of Lost Worlds&quot;,1.71
+711,Chadolyla44,20,Male,94,Mourning Blade,3.49
+712,Lisilsa62,25,Male,92,Final Critic,4.88
+713,Iasur80,22,Male,46,Hopeless Ebon Dualblade,1.33
+714,Tyidaim51,16,Female,103,Singed Scalpel,4.35
+715,Eusurdeu49,23,Male,8,&quot;Purgatory, Gem of Regret&quot;,3.93
+716,Saena89,23,Male,106,Crying Steel Sickle,3.41
+717,Chanilsast61,30,Male,177,&quot;Winterthorn, Defender of Shifting Worlds&quot;,2.08
+718,Ilirrasda54,37,Male,20,Netherbane,3.27
+719,Sundassa93,16,Male,158,&quot;Darkheart, Butcher of the Champion&quot;,2.45
+720,Aidai73,19,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+721,Indirrian56,20,Male,156,Soul-Forged Steel Shortsword,1.77
+722,Ilarin91,22,Male,92,Final Critic,4.88
+723,Lisista54,21,Male,177,&quot;Winterthorn, Defender of Shifting Worlds&quot;,2.08
+724,Lisassasta50,25,Male,144,Blood Infused Guardian,1.94
+725,Malunil62,18,Male,72,Winter&#39;s Bite,3.77
+726,Iduelis31,23,Male,21,Souleater,1.1
+727,Yathecal82,20,Female,104,Gladiator&#39;s Glaive,1.93
+728,Chanosiaya39,44,Male,93,Apocalyptic Battlescythe,1.97
+729,Assylla81,20,Male,74,Yearning Crusher,4.18
+730,Aidaira26,30,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+731,Eudanu84,22,Female,12,Dawne,1.02
+732,Eurithphos97,9,Male,97,&quot;Swan Song, Gouger Of Terror&quot;,2.5
+733,Chamiman85,20,Male,66,Victor Iron Spikes,4.4
+734,Arin32,25,Male,165,Bone Crushing Silver Skewer,4.86
+735,Leetirraya83,24,Male,54,Eternal Cleaver,2.5
+736,Tyialisti80,23,Male,58,&quot;Freak&#39;s Bite, Favor of Holy Might&quot;,4.14
+737,Marundi65,22,Male,149,&quot;Tranquility, Razor of Black Magic&quot;,1.75
+738,Eusur90,36,Male,121,Massacre,1.6
+739,Mindirranya33,35,Male,61,Ragnarok,3.87
+740,Reunasu60,22,Female,127,&quot;Heartseeker, Reaver of Souls&quot;,3.92
+741,Phiallylis33,19,Male,145,Fiery Glass Crusader,4.58
+742,Isty55,20,Male,5,Putrid Fan,4.08
+743,Frichilsa31,15,Male,110,Suspension,1.44
+744,Chanastst38,22,Male,94,Mourning Blade,3.49
+745,Chanista95,39,Male,37,&quot;Shadow Strike, Glory of Ending Hope&quot;,3.16
+746,Aellyria80,23,Male,159,&quot;Oathbreaker, Spellblade of Trials&quot;,3.08
+747,Siarithria38,38,Other / Non-Disclosed,146,Warped Iron Scimitar,3.1
+748,Rastynusuir31,20,Male,55,Vindictive Glass Edge,2.27
+749,Chanossanya44,20,Male,53,Vengeance Cleaver,2.05
+750,Iljask75,22,Male,167,&quot;Malice, Legacy of the Queen&quot;,3.61
+751,Lisjaskan36,11,Male,180,Stormcaller,3.36
+752,Mindjasksya61,17,Male,112,Worldbreaker,2.6
+753,Frichirranya75,36,Male,178,&quot;Oathbreaker, Last Hope of the Breaking Storm&quot;,4.23
+754,Pheosurllorin41,23,Female,79,&quot;Alpha, Oath of Zeal&quot;,4.05
+755,Raesty92,12,Male,76,Haunted Bronzed Bludgeon,3.15
+756,Ilast79,20,Male,73,Ritual Mace,2.05
+757,Eratiel90,18,Male,57,&quot;Despair, Favor of Due Diligence&quot;,4.6
+758,Iral74,21,Male,182,Toothpick,4.03
+759,Tyaelorap29,25,Male,72,Winter&#39;s Bite,3.77
+760,Aithelis62,21,Male,44,Bonecarvin Battle Axe,2.38
+761,Assim27,45,Male,17,&quot;Lazarus, Terror of the Earth&quot;,1.7
+762,Asur53,26,Male,110,Suspension,1.44
+763,Lassilsala30,21,Male,85,Malificent Bag,1.75
+764,Saedaiphos46,18,Male,113,Solitude&#39;s Reaver,4.07
+765,Irith83,18,Male,130,Alpha,2.07
+766,Aelastirin39,23,Male,58,&quot;Freak&#39;s Bite, Favor of Holy Might&quot;,4.14
+767,Ilmol66,8,Female,92,Final Critic,4.88
+768,Assassasta79,38,Male,92,Final Critic,4.88
+769,Ilosian36,15,Male,145,Fiery Glass Crusader,4.58
+770,Lirtosia63,34,Male,12,Dawne,1.02
+771,Iskossasda43,16,Male,25,Hero Cane,4.35
+772,Asur53,26,Male,136,Ghastly Adamantite Protector,3.58
+773,Hala31,21,Male,19,&quot;Pursuit, Cudgel of Necromancy&quot;,1.02
+774,Jiskjask80,11,Male,101,Final Critic,4.19
+775,Aethedru70,21,Female,60,Wolf,3.54
+776,Iral74,21,Male,164,Exiled Doomblade,1.63
+777,Yathecal72,20,Male,67,&quot;Celeste, Incarnation of the Corrupted&quot;,3.46
+778,Sisur91,7,Male,101,Final Critic,4.19
+779,Ennrian78,24,Male,50,Dawn,4.6
+</pre>
+<div class="js-edit-mode-pane hide" id="preview">
+<div class="center">
+<h2>
+<i class="icon-spinner icon-spin"></i>
+</h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-group row commit_message-group">
+<label class="col-form-label col-sm-2" for="commit_message-b144692f528dcf2716e37b31fb92dab1">Commit message
+</label><div class="col-sm-10">
+<div class="commit-message-container">
+<div class="max-width-marker"></div>
+<textarea name="commit_message" id="commit_message-b144692f528dcf2716e37b31fb92dab1" class="form-control js-commit-message" placeholder="Update purchase_data.csv" required="required" rows="3">
+Update purchase_data.csv</textarea>
+</div>
+</div>
+</div>
+
+<div class="form-group row branch">
+<label class="col-form-label col-sm-2" for="branch_name">Target Branch</label>
+<div class="col-sm-10">
+<input type="text" name="branch_name" id="branch_name" value="patch-1" required="required" class="form-control js-branch-name ref-name" />
+<div class="js-create-merge-request-container">
+<div class="form-check prepend-top-8">
+<input type="checkbox" name="create_merge_request" id="create_merge_request-d08fbe9dca17652d902ee2a6ed0bc040" value="1" class="js-create-merge-request form-check-input" checked="checked" />
+<label class="form-check-label" for="create_merge_request-d08fbe9dca17652d902ee2a6ed0bc040">Start a <strong>new merge request</strong> with these changes
+</label></div>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="original_branch" id="original_branch" value="master" class="js-original-branch" />
+
+<input type="hidden" name="last_commit_sha" id="last_commit_sha" value="bcbbec9cb3e2b5b12c2cb2852765b4db85b1335f" />
+<input type="hidden" name="content" id="file-content" value="" />
+<input type="hidden" name="from_merge_request_iid" id="from_merge_request_iid" />
+<div class="form-actions">
+<button name="button" type="submit" class="btn commit-btn js-commit-button btn-create">Commit changes</button>
+<a class="btn btn-cancel" data-confirm="Leave edit mode?
+All unsaved changes will be lost." href="/UCI-Coding-Bootcamp/UCIRV201807DATA4-2/blob/master/02-Homework/04-Numpy-Pandas/Instructions/HeroesOfPymoli/Resources/purchase_data.csv">Cancel</a>
+
+</div>
+
+</form></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
+
