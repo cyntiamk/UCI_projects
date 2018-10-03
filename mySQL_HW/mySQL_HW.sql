@@ -70,7 +70,8 @@ ORDER BY last_name;
 but only for names that are shared by at least two actors*/
 SELECT last_name, COUNT(last_name) AS number_actors
 FROM actor
-WHERE number_actors >= 2;
+GROUP BY last_name 
+HAVING number_actors >= 2;
 
 /*4c. The actor HARPO WILLIAMS was accidentally entered in the actor table as
  GROUCHO WILLIAMS. Write a query to fix the record.*/
@@ -100,12 +101,12 @@ ON staff.address_id = address.address_id;
 
 /*6b. Use JOIN to display the total amount rung up by each staff member
  in August of 2005. Use tables staff and payment.*/
-SELECT staff.staff_id, SUM(payment.amount) AS total_amount_by_member
+SELECT staff.staff_id,staff.first_name, staff.last_name, SUM(payment.amount) AS total_amount_by_member
 FROM payment
 INNER JOIN staff
 ON payment.staff_id = staff.staff_id
 WHERE payment_date >=  "2005-08-01" AND payment_date <= "2005-08-31"
-GROUP BY staff.staff_id;
+GROUP BY staff.staff_id,staff.first_name, staff.last_name;
  
  
 /*6c. List each film and the number of actors who are listed for that film. 
@@ -118,8 +119,10 @@ GROUP BY film.title;
 
 
 #6d. How many copies of the film Hunchback Impossible exist in the inventory system?
-SELECT title, COUNT(title) AS number_of_copies
-FROM film
+SELECT f.title, COUNT(title) AS number_of_copies
+FROM film f
+INNER JOIN inventory i
+ON f.film_id = i.film_id
 WHERE title = "Hunchback Impossible"
 GROUP BY title;
 
@@ -138,13 +141,6 @@ ORDER BY customer.last_name ASC;
 As an unintended consequence, films starting with the letters K and 
 Q have also soared in popularity. Use subqueries to display the titles of 
 movies starting with the letters K and Q whose language is English.*/
-SELECT sub.*
-FROM  (SELECT film.title, `language`.`name`
-			  FROM film
-              INNER JOIN `language`
-              ON film.language_id = `language`.language_id) sub
-WHERE sub.title LIKE 'K%' OR sub.title LIKE  'Q%';
-
 /*the code below was my first attempt to subquery, the above code seem to 
 be the correct one because it shows a cleaner output
 
@@ -155,8 +151,25 @@ be the correct one because it shows a cleaner output
                 WHERE `name` = "English") sub
 	 ON film.language_id = sub.language_id
      WHERE title LIKE 'K%' OR title LIKE 'Q%'; */
+
+/* this was my second  attempt with subqueries, as stated by Michael, it is a weird way
+to do subqueries so I should redo it following the way Chris thought us in class
+SELECT sub.*
+FROM  (SELECT film.title, `language`.`name`
+			  FROM film
+              INNER JOIN `language`
+              ON film.language_id = `language`.language_id) sub
+WHERE sub.title LIKE 'K%' OR sub.title LIKE  'Q%';*/
+SELECT title
+FROM film f
+WHERE language_id IN
+(SELECT language_id
+FROM `language`
+WHERE `name` = 'English' AND title LIKE 'K%' OR title LIKE 'Q%'
+);
                     
 #7b. Use subqueries to display all actors who appear in the film Alone Trip.
+/*first way used also works, but preferred way is below
 SELECT sub.*, title
 FROM ( 
 			 SELECT actor.first_name, actor.last_name,film_actor.film_id
@@ -166,12 +179,23 @@ FROM (
              ) sub
 INNER JOIN film
 ON sub.film_id = film.film_id
-WHERE title = "Alone Trip";
-
+WHERE title = "Alone Trip";*/
+SELECT first_name, last_name
+FROM actor
+WHERE actor_id IN
+(SELECT actor_id
+FROM film_actor
+WHERE film_id IN
+(SELECT film_id
+FROM film
+WHERE title = 'Alone Trip'
+)
+);
 
 /*7c. You want to run an email marketing campaign in Canada, 
 for which you will need the names and email addresses of all Canadian customers.
  Use joins to retrieve this information.*/
+/* assigment is asking for joins not subqueries
 SELECT  first_name, last_name, email, sub1.*
 FROM ( 
 			  SELECT sub.*,country
@@ -185,13 +209,23 @@ FROM (
                ) sub1
 INNER JOIN customer
 ON sub1.address_id = customer.address_id
-WHERE country = "Canada";
+WHERE country = "Canada";*/
 
- 
+SELECT  first_name, last_name,email, country
+FROM customer c
+JOIN address a
+	ON c.address_id = a.address_id
+JOIN city ci
+	ON a.city_id = ci.city_id
+JOIN  country co
+	ON co.country_id = ci.country_id
+WHERE country = 'Canada';
+
+
 /*7d. Sales have been lagging among young families, and you wish to 
 target all family movies for a promotion. Identify all movies categorized as family
  films.*/
-SELECT sub.*, `name`
+/*SELECT sub.*, `name`
  FROM ( 
 			  SELECT film.title, film_category.category_id
 			  FROM film
@@ -200,29 +234,36 @@ SELECT sub.*, `name`
               ) sub
 INNER JOIN category
 ON sub.category_id = category.category_id
-WHERE `name` = "Family";
+WHERE `name` = "Family";*/
+
+SELECT title, `name`
+FROM film f
+JOIN film_category fc
+	ON f.film_id = fc.film_id
+JOIN category c
+	ON fc.category_id = c.category_id
+WHERE `name` = 'Family';
  
 #7e. Display the most frequently rented movies in descending order.
-SELECT sub.*,rental_id 
-FROM (
-			 SELECT  inventory.inventory_id, film.title
-             FROM film
-             INNER JOIN inventory
-             ON film.film_id = inventory.film_id
-              )sub
-INNER JOIN rental
-ON sub.inventory_id = rental.inventory_id
-GROUP BY title, rental_id;
+
+SELECT title, COUNT(rental_id) AS 'Rental Count'
+FROM film f
+JOIN inventory i
+	ON f.film_id = i.film_id
+JOIN rental r
+	ON i.inventory_id = r.inventory_id
+GROUP BY title
+ORDER BY COUNT(rental_id)  DESC;
 
 #7f. Write a query to display how much business, in dollars, each store brought in.
-SELECT  store_id,  SUM(payment.amount) AS store_total
+SELECT  store_id,  SUM(payment.amount) AS 'Store Total'
 FROM payment
 INNER JOIN staff
 ON payment.staff_id = staff.staff_id
 GROUP BY store_id;
 
 #7g. Write a query to display for each store its store ID, city, and country.
-SELECT store_id, sub.*
+/*SELECT store_id, sub.*
 FROM(
             SELECT sub1.*,address_id
 	        FROM(
@@ -235,42 +276,35 @@ FROM(
              ON sub1.city_id = address.city_id
 			 ) sub
 INNER JOIN store
-ON sub.address_id = store.address_id;
+ON sub.address_id = store.address_id;*/
+SELECT store_id, city, country
+FROM  country co
+JOIN city c
+	ON co.country_id = c.country_id
+JOIN address a
+	ON c.city_id = a.city_id
+JOIN store s
+	ON a.address_id = s.address_id
+GROUP BY store_id;
 
 
 /*7h. List the top five genres in gross revenue in descending order.
  (Hint: you may need to use the following tables: 
  category, film_category, inventory, payment, and rental.)*/
-SELECT sub.* ,SUM(amount)AS gross_revenue
- FROM(
-			SELECT sub1.*, rental.rental_id
-            FROM(
-                            SELECT sub2.*, inventory.inventory_id
-                            FROM(
-										SELECT category.`name`, film_category.film_id
-										 FROM category
-                                         INNER JOIN film_category
-                                         ON category.category_id = film_category.category_id
-                                         ) sub2
-							INNER JOIN inventory
-                            ON sub2.film_id = inventory.film_id
-                            ) sub1
-			INNER JOIN rental
-            ON sub1.inventory_id = rental.inventory_id
-            )sub
-INNER JOIN payment
-ON sub.rental_id = payment.rental_id
+SELECT `name`,  SUM(amount) AS 'Gross Revenue'
+FROM payment p
+JOIN rental r
+	ON p.rental_id = r.rental_id
+JOIN inventory i
+	ON r.inventory_id = i.inventory_id
+JOIN film_category fc
+	ON i.film_id = fc.film_id
+JOIN category c
+	ON fc.category_id = c.category_id
 GROUP BY `name`
-ORDER BY  gross_revenue DESC;
+ORDER BY SUM(amount) DESC;
 
 
-            
-                                         
-              
-							
-											
-                                            
- 
 /*8a. In your new role as an executive, 
 you would like to have an easy way of viewing the Top five genres by gross revenue.
  Use the solution from the problem above to create a view. 
