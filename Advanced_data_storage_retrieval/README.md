@@ -1,98 +1,28 @@
-# Surfs Up!
+# Hawaii Trip
+In this project a climate analysis will be performed in order to help planning a trip to Hawaii. 
 
-![surfs-up.jpeg](Images/surfs-up.jpeg)
+## Tools and Resources:
+* Python, SQLAlchemy ORM queries, Pandas and Matplotlib
+* A sqlite file is provided with the climate database in Hawaii from 2010/01/01 to 2017/08/23
+* 
+* For the second portion of this project, Flask will be utilized. 
 
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
-
-## Step 1 - Climate Analysis and Exploration
-
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
-
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
-
-* Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
-
-* Use SQLAlchemy `create_engine` to connect to your sqlite database.
-
-* Use SQLAlchemy `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
-
-### Precipitation Analysis
-
-* Design a query to retrieve the last 12 months of precipitation data.
-
-* Select only the `date` and `prcp` values.
-
-* Load the query results into a Pandas DataFrame and set the index to the date column.
-
-* Sort the DataFrame values by `date`.
-
-* Plot the results using the DataFrame `plot` method.
-
-  ![precipitation](Images/precipitation.png)
-
-* Use Pandas to print the summary statistics for the precipitation data.
-
-### Station Analysis
-
-* Design a query to calculate the total number of stations.
-
-* Design a query to find the most active stations.
-
-  * List the stations and observation counts in descending order.
-
-  * Which station has the highest number of observations?
-
-  * Hint: You may need to use functions such as `func.min`, `func.max`, `func.avg`, and `func.count` in your queries.
-
-* Design a query to retrieve the last 12 months of temperature observation data (tobs).
-
-  * Filter by the station with the highest number of observations.
-
-  * Plot the results as a histogram with `bins=12`.
-
-    ![station-histogram](Images/station-histogram.png)
-
-### Temperature Analysis (Optional)
-
-* The starter notebook contains a function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d` and return the minimum, average, and maximum temperatures for that range of dates.
-
-* Use the `calc_temps` function to calculate the min, avg, and max temperatures for your trip using the matching dates from the previous year (i.e., use "2017-01-01" if your trip start date was "2018-01-01").
-
-* Plot the min, avg, and max temperature from your previous query as a bar chart.
-
-  * Use the average temperature as the bar height.
-
-  * Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
-
-    ![temperature](Images/temperature.png)
-
-### Other Recommended Analysis (Optional)
-
-* The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
-
-  * Calculate the rainfall per weather station using the previous year's matching dates.
-
-* Calculate the daily normals. Normals are the averages for the min, avg, and max temperatures.
-
-  * You are provided with a function called `daily_normals` that will calculate the daily normals for a specific date. This date string will be in the format `%m-%d`. Be sure to use all historic tobs that match that date string.
-
-  * Create a list of dates for your trip in the format `%m-%d`. Use the `daily_normals` function to calculate the normals for each date string and append the results to a list.
-
-  * Load the list of daily normals into a Pandas DataFrame and set the index equal to the date.
-
-  * Use Pandas to plot an area plot (`stacked=False`) for the daily normals.
-
-    ![daily-normals](Images/daily-normals.png)
-
-- - -
-
-## Step 2 - Climate App
-
-Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
-
-* Use FLASK to create your routes.
-
-### Routes
+## Steps to be accomplished:
+1. Create a jupyter notebook to hold all of the date exploration and analysis
+2. Choose a start and end date for the trip with a range of 3-15 days total. 
+3. Query the precipitation for the 12 months prior to the trip start date.
+4. Load query results into a pandas DataFrame.
+5. Plot a bar chart of the  precipitation over the 12 months queried.
+6. Query all activities by station, get temperatures analysis from the most active station.
+7. Query station with highest volume of temperature measuring and get all the 
+temperature measuring for the 12 months. 
+8. Plot a histogram wiht the temperatures for this specific station.
+9. Query the temperatures for the specific dates of the trip and the exact same
+dates but the previous year.
+10. Plot a bar chart with the y_axis showing the average temperature and the yerr the ptps.
+11. Query rainfall for each station, and display stations by descending order also showing their latitude, longitude and elevation.
+12. Calculate the daily normals using the exact month and day of the trip for each equivalent year of existing data ***(Normals are the averages for the min, avg, and max temperatures) 
+13. Using the queries developed, use Flask to create the routes:
 
 * `/api/v1.0/precipitation`
 
@@ -117,13 +47,3 @@ Now that you have completed your initial analysis, design a Flask API based on t
   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
 
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
-
-## Hints
-
-* You will need to join the station and measurement tables for some of the analysis queries.
-
-* Use Flask `jsonify` to convert your API data into a valid JSON response object.
-
-## Copyright
-
-Data Boot Camp ©2018. All Rights Reserved.
