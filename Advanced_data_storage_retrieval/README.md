@@ -47,3 +47,6 @@ dates but the previous year.
   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
 
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
+
+  ### Limitations
+  The dataset provided is not up-to-date so the trip dates had to be set in a past date, once the dateset is updated. The trip dates can be adjusted to a more current date.
