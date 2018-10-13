@@ -22,7 +22,7 @@ dates but the previous year.
 10. Plot a bar chart with the y_axis showing the average temperature and the yerr the ptps.
 11. Query rainfall for each station, and display stations by descending order also showing their latitude, longitude and elevation.
 12. Calculate the daily normals using the exact month and day of the trip for each equivalent year of existing data ***(Normals are the averages for the min, avg, and max temperatures) 
-13. Using the queries developed, use Flask to create the routes:
+13. Using the queries developed, create the routes with Flask:
 
 * `/api/v1.0/precipitation`
 
