@@ -1,7 +1,7 @@
 body {
-	padding: 5px;
-	margin: 5px;
-	border:10px;
+	padding: 20px;
+	margin: 20px;
+	border:20px;
 	border-color: #6b7782;
 	font-family: Arial;
 	font-size: 18px;
@@ -14,9 +14,26 @@ h1 {
 	text-align: center;
 	font-weight: bold;
 }
+h1.project{color:#52b7bd;
+	font-size: 20px;
+	text-align: left;
+	font-weight: bold;
+
+}
+h2.visualizations {
+	text-align: center;
+	color:#52b7bd;
+}
+h4 {
+	color: #52b7bd;
+}
+h5 {
+	color:black;
+}
 p {
 	color:black;
 	font-size: 15px;
+	text-align: center;
 }
 table{
 	color:black;
@@ -47,6 +64,60 @@ hr {
   border-width: 1px 0;
   margin: 18px 0;
 }
+img.displayed {
+	height: 700px;
+	width: 900px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.comp{
+	height: 400px;
+	width: 600px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.visual{
+	height: 200px;
+	width: 300px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boxed {
+	padding: 20px;
+	color: #52b7bd;
+	background: white;
+	text-align: left;
+}
+
+.project {
+	position: fixed;
+	top: 30%;
+	left:0;
+	background: white;
+}
+.project-text{
+	positon:fixed;
+	top:45%;
+	left:10%;
+	width:500px;
+}
+.project-img {
+	position: fixed;
+	left:0;
+}
+
+.boxed.visual {
+	position: fixed;
+	top:35%;
+	right:0;
+	width: 500px;
+	text-align: center;
+	border:1px solid #52b7bd;
+}
 
 
 .navbar-default{
@@ -65,6 +136,61 @@ hr {
 
 .navbar-collapse {
   float: right;
+}
+/* Selecting elements by class */
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+/* Selecting elements by ID */
+#main-bio,
+#contact-info,
+#bio-image {
+  float: left;
+}
+
+#figure {
+  position: relative;
+}
+
+#bio-name {
+  position: absolute;
+  top: 150px;
+  left: 30px;
+}
+
+#main-bio {
+  width: 70%;
+}
+
+#contact-info {
+  width: 30%;
+}
+
+#bio-image {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+}
+
+@media (max-width: 780px) {
+img.comp{
+	height: 200px;
+	width: 250px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.visual{
+	height: 100px;
+	width: 150px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 }
 
 
