@@ -1,12 +1,17 @@
 body {
-	padding: 20px;
-	margin: 20px;
-	border:20px;
 	border-color: #6b7782;
 	font-family: Arial;
 	font-size: 18px;
 	color: #dfd8d8;
 	background: white;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:10px;
+    background:#ccc;
 }
 h1 {
 	color:#52b7bd;
@@ -34,6 +39,10 @@ p {
 	color:black;
 	font-size: 15px;
 	text-align: center;
+}
+.jumbotron {
+	padding: 10px;
+	margin-left: 10px;
 }
 table{
 	color:black;
@@ -79,18 +88,45 @@ img.comp{
     margin-right: auto;
 }
 img.visual{
-	height: 200px;
-	width: 300px;
+	height: 100px;
+	width: 150px;
 	display: block;
     margin-left: auto;
     margin-right: auto;
 }
+img.media-object {
+	height: 150px;
+	width: 250px;
+	margin-left: 0;
+ }  
+p.media-heading {
+	margin-top:0; 
+ 	left:10px;
+ 	font-size:15px;
+ 	color:black;
+}
+.jumbotron {
+    margin-bottom: 0px;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
 
 .boxed {
-	padding: 20px;
-	color: #52b7bd;
-	background: white;
+	position: fixe;
 	text-align: left;
+	width: 67%;
+	height: 40%;
+}
+.boxed#visual {
+	position:fixed;
+	top:20%;
+	right:5px;
+	text-align: center;
+	background:#EAECEE;
+	width: 33%;
+	float: right;
 }
 
 .project {
@@ -110,19 +146,10 @@ img.visual{
 	left:0;
 }
 
-.boxed.visual {
-	position: fixed;
-	top:35%;
-	right:0;
-	width: 500px;
-	text-align: center;
-	border:1px solid #52b7bd;
-}
-
-
 .navbar-default{
 	background: #aaaebc;
 }
+#color {color:white;}
 
 .navbar-brand {
   padding: 20px;
@@ -132,7 +159,8 @@ img.visual{
   background: #52b7bd;
   border-radius: 3px;
   float: left;
-}
+  color:white;
+ }
 
 .navbar-collapse {
   float: right;
@@ -141,37 +169,6 @@ img.visual{
 .container {
   width: 1024px;
   margin: 0 auto;
-}
-
-/* Selecting elements by ID */
-#main-bio,
-#contact-info,
-#bio-image {
-  float: left;
-}
-
-#figure {
-  position: relative;
-}
-
-#bio-name {
-  position: absolute;
-  top: 150px;
-  left: 30px;
-}
-
-#main-bio {
-  width: 70%;
-}
-
-#contact-info {
-  width: 30%;
-}
-
-#bio-image {
-  width: 200px;
-  height: 200px;
-  margin-right: 20px;
 }
 
 @media (max-width: 780px) {
@@ -189,7 +186,38 @@ img.visual{
     margin-left: auto;
     margin-right: auto;
 }
+img.displayed {
+	height: 300px;
+	width: 400px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+h1.disp {
+	font-size: 20px;
+	
+}
 
+body {
+	padding: 0;
+	margin: 0;
+	border:0;
+}
+img.media-object{
+	height: 100px;
+	width: 150px;
+}
+.boxed#visual {
+	position:fixed;
+	top:25%;
+	right:5px;
+	text-align: center;
+	background:#EAECEE;
+	width: 33%;
+	float: right;
+	height: 60%;
+}
 
 }
 
