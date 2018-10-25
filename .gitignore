@@ -1,1 +1,12 @@
+# Mac folder information
+.DS_Store
 
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Jupyter notebook temporary files
+.ipynb_checkpoints/
+
+# Credentials
+config.py
