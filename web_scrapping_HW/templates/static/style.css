@@ -1,0 +1,17 @@
+body {
+	color:red;
+}
+
+.boxed#news{
+	margin-left: 0;
+
+}
+
+.boxed#featured_img {
+	float:left;
+}
+
+img#feat_img {
+	height: 200;
+	width: 300;
+}

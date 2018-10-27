@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+      
+    <!-- mars data -->
+<div class="boxed" id="news">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Latest Mars News</h3>
+      <h4>{{mars_data.news_title}}</h4>
+      <h5>{{mars_data.news_p}}</h5>
+    </div>
+  </div>
+</div>  
+  
+   <div class="boxed" id="featured_img">
+      <h3>Featured Mars Image</h3>
+      <img id="feat_img" src={{mars_data.featured_image_url}} height="450" width="580" alt="featured_image"/>
+    </div>
+  </div>
+  <div class="boxed" id="weather">
+    <h3>Current Weather on Mars</h3>
+    <p>{{mars_data.weather}}</p>
+  </div>
+   <div class="boxed" id="weather">
+    <h3>Mars Facts</h3>
+    <p>{{mars_data.facts}}</p>
+  </div>
+  <div class="boxed">
+    <h3>Mars Hemispheres</h3>
+  {% for item in mars_data.hemisphere_images %}
+  <div class="col-lg-4">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title">{{item.title}}</h4>
+        <img class="card-image" src= {{item.img_url}} height="300" width="300" />
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+
+</body>
+</html>
