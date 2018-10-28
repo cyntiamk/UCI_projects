@@ -50,3 +50,6 @@ dates but the previous year.
 
   ### Limitations
   The dataset provided is not up-to-date so the trip dates had to be set in a past date, once the dateset is updated. The trip dates can be adjusted to a more current date.
+  
+  ## Copyright
+ Data Boot Camp © 2018. All Rights Reserved.
