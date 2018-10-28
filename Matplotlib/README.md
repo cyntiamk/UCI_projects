@@ -22,3 +22,7 @@ Tools utilized:
 * Pandas Library and the Jupyter Notebook.
 * Matplotlib library.
 * You must include a written description of three observable trends based on the data.
+
+
+## Copyright
+ Data Boot Camp © 2018. All Rights Reserved.
