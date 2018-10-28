@@ -1,4 +1,4 @@
-# Sentiments Analyzer
+# Sentiment Analyzer
 
 ## Background
 
