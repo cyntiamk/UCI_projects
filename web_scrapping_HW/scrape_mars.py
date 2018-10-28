@@ -69,9 +69,10 @@ def scrape():
     facts_url = "https://space-facts.com/mars/"
 
     table = pd.read_html(facts_url)
-    #columns_renamed = table[0].rename(columns={0:"Description", 1:"Value"})
-    #mars_facts = columns_renamed.set_index('Description')
-    mars_data['facts'] =  table[0]
+
+    mars_table_to_html =table[0].to_html(header=False, index=False)
+    mars_data['fact'] = mars_table_to_html
+
 
     # Hemispheres
     hem_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
@@ -109,8 +110,8 @@ def scrape():
 
     browser.quit()    
     return mars_data
-data = scrape()
-print(data)
+#data = scrape()
+#print(data)
 
 
     

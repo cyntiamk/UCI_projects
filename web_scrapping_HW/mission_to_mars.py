@@ -84,14 +84,14 @@ executable_path = {'executable_path':'/usr/local/bin/chromedriver'}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[ ]:
+# In[11]:
 
 
 img_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
 browser.visit(img_url)
 
 
-# In[ ]:
+# In[12]:
 
 
 img_html = browser.html
@@ -99,7 +99,7 @@ img_soup = bs(img_html, 'html.parser')
 #print(img_soup.prettify())
 
 
-# In[ ]:
+# In[13]:
 
 
 #featured = img_soup.find_all(
@@ -114,14 +114,13 @@ feat_img = feat_img_soup.find('figure', class_='lede')
 feat_img_href = feat_img.find('a')['href']
 
 
-
-# In[ ]:
+# In[14]:
 
 
 featured_image_url = (f'https://www.jpl.nasa.gov/' + feat_img_href)
 
 
-# In[ ]:
+# In[15]:
 
 
 featured_image_url
@@ -129,7 +128,7 @@ featured_image_url
 
 # ### Mars Weather
 
-# In[ ]:
+# In[16]:
 
 
 # Setup Tweepy API authentications
@@ -138,21 +137,21 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 
-# In[ ]:
+# In[17]:
 
 
 # target user for Mars Weather
 target_user = "MarsWxReport"
 
 
-# In[ ]:
+# In[18]:
 
 
 # get tweets from target
 tweets = api.user_timeline(target_user, page=1, result_type="recent")
 
 
-# In[ ]:
+# In[19]:
 
 
 mars_weather = tweets[0]['text']
@@ -161,45 +160,44 @@ mars_weather
 
 # ### Mars Facts
 
-# In[ ]:
+# In[20]:
 
 
 facts_url = "https://space-facts.com/mars/"
 
 
-# In[ ]:
+# In[31]:
 
 
 table = pd.read_html(facts_url)
-columns_renamed = table[0].rename(columns={0:"Description", 1:"Value"})
-mars_facts = columns_renamed.set_index('Description')
-facts = mars_facts.to_dict('series')
-mars_facts.to_html('mars_facts.html')
+
+mars_table_to_html =table[0].to_html(header=False, index=False)
+mars_table_to_html
 
 
 # ### Mars Hemispheres
 
-# In[ ]:
+# In[22]:
 
 
 get_ipython().system('which chromedriver')
 
 
-# In[ ]:
+# In[23]:
 
 
 executable_path = {'executable_path':'/usr/local/bin/chromedriver'}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[ ]:
+# In[24]:
 
 
 hem_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 browser.visit(hem_url)
 
 
-# In[ ]:
+# In[25]:
 
 
 link_list = []
@@ -216,7 +214,7 @@ for result in results:
 url_list = ['https://astrogeology.usgs.gov/'+ link for link in link_list]
 
 
-# In[ ]:
+# In[26]:
 
 
 hemisphere_images = []
@@ -239,13 +237,13 @@ for page in url_list:
     hemisphere_images.append(hem_dict)
 
 
-# In[ ]:
+# In[27]:
 
 
 hemisphere_images
 
 
-# In[ ]:
+# In[28]:
 
 
 get_ipython().system('jupyter nbconvert --to script mission_to_mars.ipynb')
