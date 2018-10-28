@@ -1,7 +1,5 @@
 # The Power of Plots
 
-## Pybe
-
 Using this provided fictitious recordset of rides. Which contains information about every active driver and historic ride, including details like city, driver count, individual fares, and city type.
 
 The objective is to build a bubble plot that showcases the relationship between four key variables:
