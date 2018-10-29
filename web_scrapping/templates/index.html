@@ -18,7 +18,7 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
       
-    <!-- mars data -->
+    <!-- Latest News -->
 <div class="container-fluid">  
 <div class="col-md-12">  
   <div class="boxed" id="news">
@@ -29,7 +29,7 @@
   </div>
 </div>
 </div>
- 
+ <!-- Featured Image -->
 <div class="container-fluid">
   <div class="boxed" id="featured_img">
     <div class="col-md-8">
@@ -38,7 +38,7 @@
    </div>
   </div>
 </div>
-
+<!-- Current Weather -->
 <div class="container-fluid">
     <div class="boxed" id="weather">
     <div class="col-md-12">
@@ -47,17 +47,18 @@
   </div>
   </div>
 </div>
-
+<!-- Mars Facts -->
 <div class="container-fluid"> 
   <div class="boxed" id="facts">
     <h3>Mars Facts</h3>
     <p>{{mars_data.fact|safe}}</p>
   </div>
 </div>
-
+<!-- Mars Hemipheres Images -->
 <div class="container-fluid">
       <h3 style="text-align: center;">Mars Hemispheres</h3>
       <hr />
+      <!-- Created a loop to iterate through each image and title -->
   {% for item in mars_data.hemisphere_images %}
   
   <div class="col-md-6">
