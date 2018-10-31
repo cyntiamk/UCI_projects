@@ -19,7 +19,8 @@ tableData.forEach(function(ufoSighting){
 });
 console.log(tableData);
 //create variable to select filter button from html
-var fitlerButton = d3.select("#filter-btn");
+var dropdown = d3.select("dropdown-menu");
+var li = d3.select("li")
 
 //create function to be exectude when filter table button is clicked
 fitlerButton.on("click", function() {
@@ -52,14 +53,3 @@ fitlerButton.on("click", function() {
 	});
 });
 
-
-
-
-
-
-
-
-
-	
-
- 
