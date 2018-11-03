@@ -19,24 +19,24 @@ tableData.forEach(function(ufoSighting){
 });
 console.log(tableData);
 
-    searchDate = d3.select("#date").text();
-    searchCity = d3.select("#city").text();
-    searchState = d3.select("#state").text();
-    searchCountry = d3.select("#country").text();
-    searchShape = d3.select("#shape").text();
+    var filterMenu = d3.select("#filterOptions");
+    filterMenu.on("change", function (){ 
+    var searchFilter = d3.selectAll("#filterOptions");
+    var searchSelection = searchFilter.property("value");
+    console.log(searchSelection);
 
 
-    
-       if (searchDate === "Date") {
-        //create variable to select filter button from html
-    var fitlerButton = d3.select("#filter-btn");
+switch(searchSelection){
+    case "date":
 
-    //create function to be exectude when filter table button is clicked
-    fitlerButton.on("click", function() {
-    // avoid page to be refreshed
-    d3.event.preventDefault();
+        var fitlerButton = d3.select("#filter-btn");
+        //create function to be exectude when filter table button is clicked
+        fitlerButton.on("click", function() {
+        // avoid page to be refreshed
+        d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
         var inputValue = inputElement.property("value");
+        console.log(inputValue);
         var filteredData = tableData.filter(sight => sight.datetime === inputValue);
         console.log(filteredData);
 
@@ -55,17 +55,17 @@ console.log(tableData);
         });
     });
     });
-};
+    break;
 
-        if (searchCity === "City") {
+    case "city":
 
         //create variable to select filter button from html
-    var fitlerButton = d3.select("#filter-btn");
+        var fitlerButton = d3.select("#filter-btn");
 
-    //create function to be exectude when filter table button is clicked
-    fitlerButton.on("click", function() {
-    // avoid page to be refreshed
-    d3.event.preventDefault();
+        //create function to be exectude when filter table button is clicked
+        fitlerButton.on("click", function() {
+        // avoid page to be refreshed
+        d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
         var inputValue = inputElement.property("value");
         var filteredData = tableData.filter(sight => sight.city === inputValue);
@@ -86,21 +86,22 @@ console.log(tableData);
         });
     });
     });
-};
-       if (searchState === "State") {
-        //create variable to select filter button from html
-    var fitlerButton = d3.select("#filter-btn");
+    break;
+        case "state":
 
-    //create function to be exectude when filter table button is clicked
-    fitlerButton.on("click", function() {
-    // avoid page to be refreshed
-    d3.event.preventDefault();
+        //create variable to select filter button from html
+        var fitlerButton = d3.select("#filter-btn");
+
+        //create function to be exectude when filter table button is clicked
+        fitlerButton.on("click", function() {
+        // avoid page to be refreshed
+        d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
         var inputValue = inputElement.property("value");
         var filteredData = tableData.filter(sight => sight.state === inputValue);
         console.log(filteredData);
 
-            // clear tbody to input filtered data
+        // clear tbody to input filtered data
         tbody.html("");
         //loop through filtered data only
         filteredData.forEach(function(ufoSighting){
@@ -115,21 +116,22 @@ console.log(tableData);
         });
     });
     });
-};
-        if (searchCountry === "Country") {
-        //create variable to select filter button from html
-    var fitlerButton = d3.select("#filter-btn");
+    break;
+    case "country":
 
-    //create function to be exectude when filter table button is clicked
-    fitlerButton.on("click", function() {
-    // avoid page to be refreshed
-    d3.event.preventDefault();
+        //create variable to select filter button from html
+        var fitlerButton = d3.select("#filter-btn");
+
+        //create function to be exectude when filter table button is clicked
+        fitlerButton.on("click", function() {
+        // avoid page to be refreshed
+        d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
         var inputValue = inputElement.property("value");
         var filteredData = tableData.filter(sight => sight.country === inputValue);
         console.log(filteredData);
 
-            // clear tbody to input filtered data
+        // clear tbody to input filtered data
         tbody.html("");
         //loop through filtered data only
         filteredData.forEach(function(ufoSighting){
@@ -144,21 +146,22 @@ console.log(tableData);
         });
     });
     });
-};
-       if (searchShape === "Shape") {
-        //create variable to select filter button from html
-    var fitlerButton = d3.select("#filter-btn");
+    break;
+    case "shape":
 
-    //create function to be exectude when filter table button is clicked
-    fitlerButton.on("click", function() {
-    // avoid page to be refreshed
-    d3.event.preventDefault();
+        //create variable to select filter button from html
+        var fitlerButton = d3.select("#filter-btn");
+
+        //create function to be exectude when filter table button is clicked
+        fitlerButton.on("click", function() {
+        // avoid page to be refreshed
+        d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
         var inputValue = inputElement.property("value");
         var filteredData = tableData.filter(sight => sight.shape === inputValue);
         console.log(filteredData);
 
-            // clear tbody to input filtered data
+        // clear tbody to input filtered data
         tbody.html("");
         //loop through filtered data only
         filteredData.forEach(function(ufoSighting){
@@ -173,6 +176,8 @@ console.log(tableData);
         });
     });
     });
-};
+    break;
+}
 
-
+    
+ });
