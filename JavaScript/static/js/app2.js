@@ -35,7 +35,7 @@ switch(searchSelection){
         // avoid page to be refreshed
         d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
-        var inputValue = inputElement.property("value");
+        var inputValue = inputElement.property("value").toLowerCase();
         console.log(inputValue);
         var filteredData = tableData.filter(sight => sight.datetime === inputValue);
         console.log(filteredData);
@@ -67,7 +67,7 @@ switch(searchSelection){
         // avoid page to be refreshed
         d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
-        var inputValue = inputElement.property("value");
+        var inputValue = inputElement.property("value").toLowerCase();
         var filteredData = tableData.filter(sight => sight.city === inputValue);
         console.log(filteredData);
 
@@ -97,7 +97,7 @@ switch(searchSelection){
         // avoid page to be refreshed
         d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
-        var inputValue = inputElement.property("value");
+        var inputValue = inputElement.property("value").toLowerCase();
         var filteredData = tableData.filter(sight => sight.state === inputValue);
         console.log(filteredData);
 
@@ -127,7 +127,7 @@ switch(searchSelection){
         // avoid page to be refreshed
         d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
-        var inputValue = inputElement.property("value");
+        var inputValue = inputElement.property("value").toLowerCase();
         var filteredData = tableData.filter(sight => sight.country === inputValue);
         console.log(filteredData);
 
@@ -157,7 +157,7 @@ switch(searchSelection){
         // avoid page to be refreshed
         d3.event.preventDefault();
         var inputElement = d3.select("#inputSearch");
-        var inputValue = inputElement.property("value");
+        var inputValue = inputElement.property("value").toLowerCase();
         var filteredData = tableData.filter(sight => sight.shape === inputValue);
         console.log(filteredData);
 
