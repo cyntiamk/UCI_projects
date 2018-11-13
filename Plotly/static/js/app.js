@@ -7,8 +7,71 @@ function buildMetadata(sample) {
         $data.append("h6").text(`${key}: ${value}`);
      
  });
-    // BONUS: Build the Gauge Chart
+      // BONUS: Build the Gauge Chart
     //buildGauge(data.WFREQ);
+
+var frequency =  Data.WFREQ;
+console.log(frequency);
+
+// Trig to calc meter point
+var degrees = 180 - (20*frequency),
+     radius = .6;
+var radians = degrees * Math.PI / 180;
+var x = radius * Math.cos(radians);
+var y = radius * Math.sin(radians);
+
+// Path: may have to change to create a better triangle
+var mainPath = 'M -.0 -0.035 L .0 0.035 L ',
+     pathX = String(x),
+     space = ' ',
+     pathY = String(y),
+     pathEnd = ' Z';
+var path = mainPath.concat(pathX,space,pathY,pathEnd);
+
+var data = [{ type: 'scatter',
+   x: [0], y:[0],
+    marker: {size: 28, color:'850000'},
+    showlegend: false,
+    name: 'WFREQ',
+    text: frequency,
+    hoverinfo: 'text+name'},
+  { values: [10/9, 10/9, 10/9, 10/9, 10/9, 10/9, 10/9,10/9,10/9,10],
+  rotation: 90,
+  text: ['8-9', '7-8', '6-7', '5-6',
+            '4-5', '3-4', '2-3', '1-2','0-1'],
+  textinfo: 'text',
+  textposition:'inside',
+  marker: {colors:['rgba(58, 95, 89, 1)','rgba(69, 126, 115, 1)',
+  				   'rgba(84, 135, 126, 1)','rgba(94, 151, 140, 1)',
+  				   'rgba(120, 177, 166, 1)','rgba(145, 202, 191, .5)',
+  				   'rgba(171, 228, 217, .5)','rgba(212, 252, 248, 1)',
+  				   'rgba(221, 255, 255, 1)','rgba(0,0,0,0)']},
+  labels: ['8-9', '7-8', '6-7', '5-6',
+            '4-5', '3-4', '2-3', '1-2','0-1'],
+  hoverinfo: 'label',
+  hole: .5,
+  type: 'pie',
+  showlegend: false 
+}];
+var layout = {
+  shapes:[{
+      type: 'path',
+      path: path,
+      fillcolor: '850000',
+      line: {
+        color: '850000'
+      }
+    }],
+  title: 'Belly Button Washing Frequency',
+  height: 450,
+  width: 450,
+  xaxis: {zeroline:false, showticklabels:false,
+             showgrid: false, range: [-1, 1]},
+  yaxis: {zeroline:false, showticklabels:false,
+             showgrid: false, range: [-1, 1]}
+};
+
+Plotly.newPlot('gauge', data, layout);
     
     });
   }
@@ -62,11 +125,12 @@ function buildCharts(sample) {
     var trace1 = {
       labels: xPie,
       values: yPie,
-      type: "pie"
+      type: "pie",
+      text: Data.otu_labels.map(row => row)
     }
     var pieData = [trace1];
     var layout1 = {
-      height: 400,
+      height: 500,
       width: 500
     };
 
