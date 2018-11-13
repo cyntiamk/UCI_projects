@@ -1,9 +1,9 @@
 function buildMetadata(sample) {
   
-    d3.json(`/metadata/${sample}`).then((data) => {
+    d3.json(`/metadata/${sample}`).then((Data) => {
         var $data = d3.select("#sample-metadata");   
         $data.html("");  
-        Object.entries(data).forEach(([key, value]) => {
+        Object.entries(Data).forEach(([key, value]) => {
         $data.append("h6").text(`${key}: ${value}`);
      
  });
@@ -12,47 +12,88 @@ function buildMetadata(sample) {
     
     });
   }
-
   
 function buildCharts(sample) {
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
 
-  d3.json(`/samples/${sample}`).then((data) => {
+  d3.json(`/samples/${sample}`).then((Data) => {
+    
+    var x = Data.otu_ids.map(row => row);
+    //console.log(x);
+    var y = Data.sample_values.map(row => row);
+    //console.log(y);
 
+    var dict = {},
+      i,
+      x = Data.otu_ids.map(row => row),
+      y = Data.sample_values.map(row => row);
+    for (i = 0; i < x.length; i++) {
+      dict[x[i]] = y[i];
+    }
+    console.log(dict);
 
-    // Pie Chart
-    // HINT: You will need to use slice() to grab the top 10 sample_values,
-    // otu_ids, and labels (10 each).
+    var items = Object.keys(dict).map(function(key) {
+      return [key, dict[key]];
+    });
+    items.sort(function(a, b) {
+      return b[1] - a[1];
+    });
+    var slicedArray = items.slice(0,10);
+    console.log(slicedArray);
+    
+    var xPie = [];
+    var yPie = [];
+    var i = 0;
+      for (i=0; i<slicedArray.length; i++){
+        if (slicedArray[i][0] && i<slicedArray.length);
+        xPie.push(slicedArray[i][0]);
+      }
+      console.log(xPie);
+      
+      for (i=0; i<slicedArray.length; i++){
+        if (slicedArray[i][1] && i<slicedArray.length);
+        yPie.push(slicedArray[i][1]);
+      }
 
-    var sampleData = [data];
-    var color = "rgb" + "("+sampleData.map(row => row.otu_ids)+")";
-    var size = sampleData.map(row => row.sample_values);
-    var x = sampleData.map(row => row.otu_ids);
-    console.log(x)
-    var y = sampleData.map(row => row.sample_values);
+      console.log(yPie);
+
+    //Pie chart
+    var trace1 = {
+      labels: xPie,
+      values: yPie,
+      type: "pie"
+    }
+    var pieData = [trace1];
+    var layout1 = {
+      height: 400,
+      width: 500
+    };
+
+    Plotly.newPlot("pie", pieData, layout1);
 
     //Bubble chart
-    var trace1 = {
+    var trace2  = {
       x: x,
       y: y,
-      type: "scatter",
+      
       mode: "markers",
       marker: {
-        //color: color,
-        //size: size,
-        //text: sampleData.map(row => row.otu_labels),
+        color: x,
+        size: y,
+        text: Data.otu_labels.map(row => row),
         symbol: ["circle"]
       }
     };
-    var layout = {
-      title: "Bubble Chart",
+    var layout2 = {
+      xaxis: {title:"OTU ID"}
+     };
 
-    };
-    var data = [trace1];
-    Plotly.newPlot("bubble",data, layout);
+    var data = [trace2];
 
+    Plotly.newPlot("bubble",data, layout2);
   });
+
 }
 
 

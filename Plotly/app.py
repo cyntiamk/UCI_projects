@@ -82,16 +82,16 @@ def sample_metadata(sample):
 def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
     stmt = db.session.query(Samples).statement
-    print(stmt)
+    #print(stmt)
     df = pd.read_sql_query(stmt, db.session.bind)
 
     # Filter the data based on the sample number and
     # only keep rows with values above 1
-    print(sample)
-    print(df.head())
+    #print(sample)
+    #print(df.head())
     sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
 
-    print(sample_data.head())
+    #print(sample_data.head())
 
     # Format the data to send as json
     data = {
