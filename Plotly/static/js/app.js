@@ -81,24 +81,48 @@ function buildCharts(sample) {
   // @TODO: Use `d3.json` to fetch the sample data for the plots
 
   d3.json(`/samples/${sample}`).then((Data) => {
+
+console.log(Data.otu_ids);
     
-    var x = Data.otu_ids.map(row => row);
+    var x = Data.otu_ids
     //console.log(x);
-    var y = Data.sample_values.map(row => row);
+    var y = Data.sample_values
     //console.log(y);
+    //Bubble chart
+    var trace2  = {
+      x: x,
+      y: y,
+      
+      mode: "markers",
+      marker: {
+        color: x,
+        size: y,
+        text: Data.otu_labels,
+        symbol: ["circle"]
+      }
+    };
+    var layout2 = {
+      xaxis: {title:"OTU ID"}
+     };
 
-    var dict = {},
-      i,
-      x = Data.otu_ids.map(row => row),
-      y = Data.sample_values.map(row => row);
+    var data = [trace2];
+
+    Plotly.newPlot("bubble",data, layout2);
+
+
+
+    var items = []
+      // i,
+      // x = Data.otu_ids,
+      // y = Data.sample_values;
     for (i = 0; i < x.length; i++) {
-      dict[x[i]] = y[i];
+      items[i] = [x[i], y[i]];
     }
-    console.log(dict);
+    console.log(items);
 
-    var items = Object.keys(dict).map(function(key) {
-      return [key, dict[key]];
-    });
+    //var items = Object.keys(dict).map(function(key) {
+    //  return [key, dict[key]];
+    //});
     items.sort(function(a, b) {
       return b[1] - a[1];
     });
@@ -136,27 +160,7 @@ function buildCharts(sample) {
 
     Plotly.newPlot("pie", pieData, layout1);
 
-    //Bubble chart
-    var trace2  = {
-      x: x,
-      y: y,
-      
-      mode: "markers",
-      marker: {
-        color: x,
-        size: y,
-        text: Data.otu_labels.map(row => row),
-        symbol: ["circle"]
-      }
-    };
-    var layout2 = {
-      xaxis: {title:"OTU ID"}
-     };
-
-    var data = [trace2];
-
-    Plotly.newPlot("bubble",data, layout2);
-  });
+ });
 
 }
 
