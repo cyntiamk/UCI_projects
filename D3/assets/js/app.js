@@ -88,7 +88,7 @@ var toolTip = d3.tip()
 	.attr("class", "d3-tip")
 	.offset([80, -60])
 	.html(function(d){
-		return (`${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
+		return (`<strong>${d.state}:</strong><br>${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
 	});
 	xCircleGroup.call(toolTip);
 
@@ -126,7 +126,7 @@ var toolTip = d3.tip()
 	.attr("class", "d3-tip")
 	.offset([80, -60])
 	.html(function(d){
-		return (`${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
+		return (`<strong>${d.state}:</strong><br> ${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
 	});
 	yCircleGroup.call(toolTip);
 
@@ -138,7 +138,6 @@ var toolTip = d3.tip()
 		});
 	return yCircleGroup;
 }
-
 
 d3.csv("assets/data/data.csv", function(err, censusData) {
 	if (err) throw err;
@@ -184,11 +183,23 @@ var circleGroup = chartGroup.selectAll("circle")
 	.data(censusData)
 	.enter()
 	.append("circle")
+	.classed("stateCircle",true)
 	.attr("cx", d => xLinearScale(d[chosenXAxis]))
 	.attr("cy", d => yLinearScale(d[chosenYAxis]))
-	.attr("r", 10)
-	.attr("fill", "blue")
-	.attr("opacity", ".5");
+	.attr("r", 15);
+
+var textGroup = chartGroup.selectAll("text")
+	.data(censusData)
+	.enter()
+	.append("text");
+
+
+textGroup
+	.text(d => d.abbr)
+	//.classed("stateText", true)
+	.attr("text-anchor", "middle")
+	.attr("x", d => xLinearScale(d[chosenXAxis]))
+	.attr("y", d => yLinearScale(d[chosenYAxis]) + 6);
 
 var xLabelsGroup = chartGroup.append("g")
 	.attr("transform", `translate(${width/2}, ${height + 20})`);
@@ -257,6 +268,7 @@ var xCircleGroup = xUpdateToolTip(chosenXAxis, circleGroup);
         console.log(chosenXAxis)
 
         // functions here found above csv import
+        textGroup = xTextLabels(xTextGroup)
         // updates x scale for new data
         xLinearScale = xScale(censusData, chosenXAxis);
         // updates x axis with transition
@@ -314,8 +326,9 @@ yLabelsGroup.selectAll("text")
         chosenYAxis = yValue;
 
         console.log(chosenYAxis)
-
+       
         // functions here found above csv import
+        
         // updates y scale for new data
         yLinearScale = yScale(censusData, chosenYAxis);
 
