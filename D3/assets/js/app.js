@@ -55,12 +55,16 @@ function renderXCircles(circleGroup, newXScale, chosenXAxis) {
 	circleGroup.transition()
 	.duration(500)
 	.attr("cx", d => newXScale(d[chosenXAxis]))
+	.attr("x", d => newXScale(d[chosenXAxis]))
 	return circleGroup;
 }
 function renderYCircles(circleGroup, newYScale, chosenYAxis) {
 	circleGroup.transition()
+	
 	.duration(500)
 	.attr("cy", d => newYScale(d[chosenYAxis]))
+	.attr("y", d => newYScale(d[chosenYAxis]))
+	
 	return circleGroup;
 }
 function xUpdateToolTip(chosenXAxis,xCircleGroup) {
@@ -179,6 +183,8 @@ var yAxis = chartGroup.append("g")
 	.call(leftAxis);
 
 
+
+
 var circleGroup = chartGroup.selectAll("circle")
 	.data(censusData)
 	.enter()
@@ -188,32 +194,30 @@ var circleGroup = chartGroup.selectAll("circle")
 	.attr("cy", d => yLinearScale(d[chosenYAxis]))
 	.attr("r", 15);
 
-var textGroup = chartGroup.selectAll("text")
+
+var textGroup = chartGroup.selectAll("stateText")
 	.data(censusData)
 	.enter()
-	.append("text");
-
-
-textGroup
-	.text(d => d.abbr)
-	//.classed("stateText", true)
-	.attr("text-anchor", "middle")
+	.append("text")
+	.classed("stateText", true)
+ 	.attr("text-anchor", "middle")
 	.attr("x", d => xLinearScale(d[chosenXAxis]))
-	.attr("y", d => yLinearScale(d[chosenYAxis]) + 6);
+	.attr("y", d => yLinearScale(d[chosenYAxis])+6)
+	.text(d => d.abbr);
 
 var xLabelsGroup = chartGroup.append("g")
 	.attr("transform", `translate(${width/2}, ${height + 20})`);
 
 var incomeLabel = xLabelsGroup.append("text")
     .attr("x", 0)
-    .attr("y", 40)
+    .attr("y", 20)
     .attr("value", "income") // value to grab for event listener
     .classed("active", true)
     .text("Household Income(Median)");
 
 var povertyLabel = xLabelsGroup.append("text")
     .attr("x", 0)
-    .attr("y", 20)
+    .attr("y", 40)
     .attr("value", "poverty") // value to grab for event listener
     .classed("inactive", true)
     .text("In Poverty(%)");
@@ -230,21 +234,21 @@ var ageLabel = xLabelsGroup.append("text")
  	.attr("transform", "rotate(-90)");
 
  var healthcareLabel = yLabelsGroup.append("text")	
-    .attr("y", 0 - 80)
+    .attr("y", 0 - 40)
     .attr("x", 0 - (height/2))
     .attr("value", "healthcare")
     .classed("active", true)
     .text("Lacks Healthcare(%)");
 
  var obesityLabel = yLabelsGroup.append("text")	
-    .attr("y", 0 - 40)
+    .attr("y", 0 - 60)
     .attr("x", 0 - (height/2))
     .attr("value", "obesity")
     .classed("inactive", true)
     .text("Obesity(%)");
 
  var smokesLabel = yLabelsGroup.append("text")	
-    .attr("y", 0 - 60)
+    .attr("y", 0 - 80)
     .attr("x", 0 - (height/2))
     .attr("value", "smokes")
     .classed("inactive", true)
@@ -252,8 +256,10 @@ var ageLabel = xLabelsGroup.append("text")
 
 
 
+
 //updateToolTip function above csv import
 var xCircleGroup = xUpdateToolTip(chosenXAxis, circleGroup);
+var xTextGroup = xUpdateToolTip(chosenXAxis, textGroup);
 
  //x axis labels event listener
  xLabelsGroup.selectAll("text")
@@ -264,20 +270,20 @@ var xCircleGroup = xUpdateToolTip(chosenXAxis, circleGroup);
 
         // replaces chosenXAxis with value
         chosenXAxis = xValue;
-
         console.log(chosenXAxis)
-
         // functions here found above csv import
-        textGroup = xTextLabels(xTextGroup)
+ 
         // updates x scale for new data
         xLinearScale = xScale(censusData, chosenXAxis);
         // updates x axis with transition
         xAxis = renderXAxes(xLinearScale, xAxis);
        // updates circles with new x values
         circleGroup = renderXCircles(xCircleGroup, xLinearScale, chosenXAxis);
+        textGroup = renderXCircles(xTextGroup,xLinearScale,chosenXAxis);
         
         // updates tooltips with new info
-        circlesGroup = xUpdateToolTip(chosenXAxis, xCircleGroup);
+        circleGroup = xUpdateToolTip(chosenXAxis, xCircleGroup);
+        textGroup = xUpdateToolTip(chosenXAxis, xTextGroup);
 
         // changes classes to change bold text
         if (chosenXAxis === "poverty") {
@@ -316,6 +322,8 @@ var xCircleGroup = xUpdateToolTip(chosenXAxis, circleGroup);
       }
 
 var yCircleGroup = yUpdateToolTip(chosenYAxis, circleGroup);
+var yTextGroup = xUpdateToolTip(chosenXAxis, textGroup);
+
 yLabelsGroup.selectAll("text")
     .on("click", function() {
       // get value of selection
@@ -337,9 +345,11 @@ yLabelsGroup.selectAll("text")
 
         // updates circles with new y values
         circleGroup = renderYCircles(yCircleGroup, yLinearScale, chosenYAxis);
+        textGroup = renderYCircles(yTextGroup, yLinearScale, chosenYAxis);
 
         // updates tooltips with new info
         circleGroup = yUpdateToolTip(chosenYAxis, yCircleGroup);
+        textGroup = yUpdateToolTip(chosenYAxis, yTextGroup);
 
         // changes classes to change bold text
         if (chosenYAxis === "healthcare") {
@@ -374,11 +384,16 @@ yLabelsGroup.selectAll("text")
           obesityLabel
             .classed("active", true)
             .classed("inactive", false);
-        }
-      }
-    });
+        		}
+      		}
+    	});
+	});
 });
-});
+
+
+
+
+
 
 
 
