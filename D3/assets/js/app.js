@@ -51,20 +51,16 @@ function renderYAxes(newYScale, yAxis) {
 		.call(leftAxis);
 	return yAxis;
 }
-function renderXCircles(circleGroup, newXScale, chosenXAxis) {
+function updateXValuesText(circleGroup,newXScale, chosenXAxis, attr) {
 	circleGroup.transition()
 	.duration(500)
-	.attr("cx", d => newXScale(d[chosenXAxis]))
-	.attr("x", d => newXScale(d[chosenXAxis]))
+	.attr(attr, d => newXScale(d[chosenXAxis]))
 	return circleGroup;
 }
-function renderYCircles(circleGroup, newYScale, chosenYAxis) {
+function updateYValuesText(circleGroup, newYScale, chosenYAxis, attr) {
 	circleGroup.transition()
-	
 	.duration(500)
-	.attr("cy", d => newYScale(d[chosenYAxis]))
-	.attr("y", d => newYScale(d[chosenYAxis]))
-	
+	.attr(attr, d => newYScale(d[chosenYAxis]))
 	return circleGroup;
 }
 function xUpdateToolTip(chosenXAxis,xCircleGroup) {
@@ -183,8 +179,6 @@ var yAxis = chartGroup.append("g")
 	.call(leftAxis);
 
 
-
-
 var circleGroup = chartGroup.selectAll("circle")
 	.data(censusData)
 	.enter()
@@ -278,8 +272,8 @@ var xTextGroup = xUpdateToolTip(chosenXAxis, textGroup);
         // updates x axis with transition
         xAxis = renderXAxes(xLinearScale, xAxis);
        // updates circles with new x values
-        circleGroup = renderXCircles(xCircleGroup, xLinearScale, chosenXAxis);
-        textGroup = renderXCircles(xTextGroup,xLinearScale,chosenXAxis);
+        circleGroup = updateXValuesText(xCircleGroup, xLinearScale, chosenXAxis, 'cx');
+        textGroup = updateXValuesText(xTextGroup,xLinearScale,chosenXAxis, 'x');
         
         // updates tooltips with new info
         circleGroup = xUpdateToolTip(chosenXAxis, xCircleGroup);
@@ -320,6 +314,7 @@ var xTextGroup = xUpdateToolTip(chosenXAxis, textGroup);
             .classed("inactive", false);
         }
       }
+});
 
 var yCircleGroup = yUpdateToolTip(chosenYAxis, circleGroup);
 var yTextGroup = xUpdateToolTip(chosenXAxis, textGroup);
@@ -344,8 +339,8 @@ yLabelsGroup.selectAll("text")
         yAxis = renderYAxes(yLinearScale, yAxis);
 
         // updates circles with new y values
-        circleGroup = renderYCircles(yCircleGroup, yLinearScale, chosenYAxis);
-        textGroup = renderYCircles(yTextGroup, yLinearScale, chosenYAxis);
+        circleGroup = updateYValuesText(yCircleGroup, yLinearScale, chosenYAxis, 'cy');
+        textGroup = updateYValuesText(yTextGroup, yLinearScale, chosenYAxis, 'y');
 
         // updates tooltips with new info
         circleGroup = yUpdateToolTip(chosenYAxis, yCircleGroup);
@@ -386,8 +381,7 @@ yLabelsGroup.selectAll("text")
             .classed("inactive", false);
         		}
       		}
-    	});
-	});
+    });
 });
 
 
