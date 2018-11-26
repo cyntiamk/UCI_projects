@@ -35,7 +35,7 @@ function style(feature) {
         fillColor: getColor(feature.properties.mag),
         weight: 0.5,
         opacity: 1,
-        color: 'white',
+        color: 'black',
         fillOpacity: 0.7,
         radius: 3*feature.properties.mag
     };

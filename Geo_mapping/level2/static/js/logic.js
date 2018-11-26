@@ -1,23 +1,11 @@
 // Store our API endpoint inside queryUrl
-var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var earthquakeUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var faultUrl = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_steps.json";
 
-var myMap = L.map("map", {
-    center: [
-      37.09, -95.71
-    ],
-    zoom: 5
-  });
-L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
-    id: "mapbox.light",
-    accessToken: API_KEY
-  }).addTo(myMap);
-
-  d3.json(queryUrl, function(data) {
-  console.log(data)
-
-//L.geoJSON(data).addTo(myMap);
+var earthquakesData =  d3.json(earthquakeUrl, function(data) {
+var faultLineData = d3.json(faultUrl, function (faultData) {
+  console.log(data);
+  console.log(faultData);
 
 function getColor(d) {
     return d > 7 ? '#800026' :
@@ -30,24 +18,76 @@ function getColor(d) {
                    '#FFEDA0';
 }
 
-function style(feature) {
+function eStyle(feature) {
     return {
         fillColor: getColor(feature.properties.mag),
         weight: 0.5,
         opacity: 1,
-        color: 'white',
+        color: 'black',
         fillOpacity: 0.7,
         radius: 3*feature.properties.mag
     };
 }
 
-var dataColor = L.geoJson(data, {
-	pointToLayer: function (feature, latlng) {
-		return L.circleMarker(latlng, style(feature))
-		.bindPopup("<p>Location: " + feature.properties.place + "</p><hr><p> Magnitude: "+feature.properties.mag+"</p>");
-	}
+var earthquakes = L.geoJson(data, {
+  pointToLayer: function (feature, latlngs) {
+    return L.circleMarker(latlngs, eStyle(feature))
+    .bindPopup("<p>Location: " + feature.properties.place + "</p><hr><p> Magnitude: "+feature.properties.mag+"</p>");
+  }
 });
-dataColor.addTo(myMap);
+var lightmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.light",
+    accessToken: API_KEY
+  });
+var satellite = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.satellite",
+    accessToken: API_KEY
+  });
+var outdoors = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.outdoors",
+    accessToken: API_KEY
+  });
+
+function fStyle(feature) {
+    return {
+        weight: 1,
+        opacity: 1,
+        stroke: 'black',
+    };
+}
+
+var faultLines = L.geoJson(faultData, {
+  function (feature, latlngs) {
+    return L.polygon(latlngs);
+  }
+});
+var baseMaps = {
+  "Grayscale": lightmap,
+  "Satellite": satellite,
+  "Outdoors": outdoors
+};
+
+var overlayMaps = {
+  "Earthquakes": earthquakes,
+  "Fault Lines": faultLines
+};
+
+var myMap = L.map("map", {
+    center: [37.09, -95.71],
+    zoom: 5,
+    layers: [lightmap, earthquakes]
+  });
+
+
+L.control.layers(baseMaps, overlayMaps, {
+  collapsed: false
+}).addTo(myMap);
 
 var legend = L.control({position: 'bottomright'});
 
@@ -70,4 +110,5 @@ legend.onAdd = function (map) {
 legend.addTo(myMap);
 
 
+});
 });
