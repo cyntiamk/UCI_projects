@@ -4,7 +4,6 @@ In this project a climate analysis will be performed in order to help planning a
 ## Tools and Resources:
 * Python, SQLAlchemy ORM queries, Pandas and Matplotlib
 * A sqlite file is provided with the climate database in Hawaii from 2010/01/01 to 2017/08/23
-* 
 * For the second portion of this project, Flask will be utilized. 
 
 ## Steps accomplished:
