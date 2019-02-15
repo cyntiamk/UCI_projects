@@ -7,7 +7,7 @@ In this project a climate analysis will be performed in order to help planning a
 * 
 * For the second portion of this project, Flask will be utilized. 
 
-## Steps to be accomplished:
+## Steps accomplished:
 1. Create a jupyter notebook to hold all of the date exploration and analysis
 2. Choose a start and end date for the trip with a range of 3-15 days total. 
 3. Query the precipitation for the 12 months prior to the trip start date.
